@@ -7,6 +7,7 @@ export default {
             queue: 'sqs-lite',
         },
     },
+    buildCommand: 'yarn run next:build',
     warmer: {
         invokeFunction: 'dummy'
     }
