@@ -26,7 +26,7 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias = "global"
+  alias  = "global"
   region = "us-east-1"
 
   default_tags {
@@ -40,16 +40,16 @@ data "aws_caller_identity" "current" {}
 
 module "single_zone" {
   providers = {
-    aws.dns = aws
-    aws.iam = aws
+    aws.dns             = aws
+    aws.iam             = aws
     aws.server_function = aws
-    aws.global = aws.global
+    aws.global          = aws.global
   }
 
   source  = "RJPearson94/open-next/aws//modules/tf-aws-open-next-zone"
   version = "3.1.0"
 
-  prefix = "vltech-website"
+  prefix      = "vltech-website"
   folder_path = "../.open-next"
 
   domain_config = {
