@@ -1,10 +1,10 @@
-name: MR Checks
-run-name: MR Checks
+name: PR Checks
+run-name: PR Checks
 on:
   pull_request:
 
 jobs:
-  Terraform-Plan:
+  Check-Deployment:
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -16,8 +16,24 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: hashicorp/setup-terraform@v3
+
+      # Building website for open-next to plan the Terraform arch
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+        
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build OpenNext
+        run: yarn run open-next:build
       
+      # Terraform checks
+      - uses: hashicorp/setup-terraform@v3
+
       - name: Terraform fmt
         id: fmt
         run: terraform fmt -check
@@ -64,7 +80,7 @@ jobs:
       
             </details>
       
-            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`terraform\`, Workflow: \`${{ github.workflow }}\`*`;
       
             github.rest.issues.createComment({
               issue_number: context.issue.number,
