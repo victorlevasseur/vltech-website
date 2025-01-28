@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata, Viewport } from "next";
+import "./globals.scss";
 import { firaCode, firaSans } from "@/fonts";
 
 export const metadata: Metadata = {
   title: "Victor Levasseur Tech",
   description: "TODO",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  initialScale: 1,
+  width: "device-width",
+  maximumScale: 1,
 };
 
 export default function RootLayout({

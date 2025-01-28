@@ -1,5 +1,4 @@
 import MenuBarLink from "@/components/menu-bar/menu-bar-link";
-import Image from "next/image";
 
 export default function Home() {
   return (

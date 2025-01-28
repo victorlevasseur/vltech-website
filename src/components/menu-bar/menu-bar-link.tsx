@@ -1,7 +1,6 @@
 import React from "react";
-import { firaCode } from "@/fonts";
 
-import styles from "./menu-bar-link.module.css";
+import styles from "./menu-bar-link.module.scss";
 
 interface MenuBarLinkProps {
   label: string;

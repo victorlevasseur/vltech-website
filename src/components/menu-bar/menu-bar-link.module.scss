@@ -15,19 +15,19 @@
 
   outline: 2px solid var(--color-transparent);
   box-shadow: 0px 0px 0px 2px var(--color-transparent);
-}
 
-.container:hover {
-  outline-color: var(--color-secondary-500);
-}
+  &:hover {
+    outline-color: var(--color-secondary-500);
+  }
 
-.container.active {
-  background-color: var(--color-secondary-700);
+  &.active {
+    background-color: var(--color-secondary-700);
 
-  color: var(--color-white);
-}
+    color: var(--color-white);
 
-.container.active:hover {
-  outline-color: var(--color-white);
-  box-shadow: 0px 0px 0px 4px var(--color-secondary-700);
+    &:hover {
+      outline-color: var(--color-white);
+      box-shadow: 0px 0px 0px 4px var(--color-secondary-700);
+    }
+  }
 }
