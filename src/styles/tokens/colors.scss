@@ -1,0 +1,23 @@
+@function primary($variant) {
+  @return var(--color-primary-#{$variant});
+}
+
+@function secondary($variant) {
+  @return var(--color-secondary-#{$variant});
+}
+
+@function neutral($variant) {
+  @return var(--color-neutral-#{$variant});
+}
+
+@function black() {
+  @return var(--color-black);
+}
+
+@function white() {
+  @return var(--color-white);
+}
+
+@function transparent() {
+  @return var(--color-transparent);
+}
