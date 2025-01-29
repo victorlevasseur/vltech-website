@@ -1,0 +1,7 @@
+@mixin normal {
+  font-family: var(--font-fira-sans);
+}
+
+@mixin catchy {
+  font-family: var(--font-fira-code);
+}

@@ -1,0 +1,26 @@
+$breakpoints: (
+  'small': 576px,
+  'medium': 768px,
+  'large': 992px,
+  'xlarge': 1200px
+);
+
+@mixin eq-or-smaller($max-breakpoint) {
+  @if map-has-key($breakpoints, $max-breakpoint) {
+    @media (max-width: (map-get($breakpoints, $max-breakpoint) - 1px)) {
+      @content;
+    }
+  } @else {
+    @warn "Maximum breakpoint '#{$max-breakpoint}' not found in \$breakpoints map.";
+  }
+}
+
+@mixin eq-or-larger($min-breakpoint) {
+  @if map-has-key($breakpoints, $min-breakpoint) {
+    @media (min-width: map-get($breakpoints, $min-breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Minimum breakpoint '#{$min-breakpoint}' not found in \$breakpoints map.";
+  }
+}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.scss";
 import { firaCode, firaSans } from "@/fonts";
+
+import "@/styles/globals/globals.scss";
 
 export const metadata: Metadata = {
   title: "Victor Levasseur Tech",
@@ -24,10 +25,7 @@ export default function RootLayout({
       <body
         className={`
           ${firaSans.variable} 
-          ${firaCode.variable} 
-          antialiased
-          bg-white
-          text-black`}
+          ${firaCode.variable}`}
       >
         <main>{children}</main>
       </body>
