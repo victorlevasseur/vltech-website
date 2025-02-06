@@ -1,0 +1,35 @@
+@use 'sass:map';
+
+@use '@/styles/tokens/media.scss';
+
+.root {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  // TODO: padding as margins
+}
+
+.container {
+
+  &.grid {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+  
+    column-gap: clamp(12px, 1.6vw, 16px);
+    row-gap: 24px;
+  
+    @include media.smaller('medium') {
+      flex: 1;
+      margin: 0 24px;
+    }
+  
+    @include media.larger-or-eq('medium') {
+      flex: 0 1 map.get(media.$breakpoints, 'xlarge');
+      margin: 0 clamp(24px, 5vw, 5vw);
+    }
+  }
+}

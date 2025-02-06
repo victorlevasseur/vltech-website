@@ -1,0 +1,23 @@
+@use '@/styles/tokens/media.scss';
+
+@for $i from 1 through 12 {
+  .col-small-#{$i} {
+    grid-column: span #{$i};
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-medium-#{$i} {
+    @include media.larger-or-eq('medium') {
+      grid-column: span #{$i};
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-large-#{$i} {
+    @include media.larger-or-eq('large') {
+      grid-column: span #{$i};
+    }
+  }
+}

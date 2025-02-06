@@ -4046,6 +4046,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"autoprefixer@npm:^10.4.20":
+  version: 10.4.20
+  resolution: "autoprefixer@npm:10.4.20"
+  dependencies:
+    browserslist: "npm:^4.23.3"
+    caniuse-lite: "npm:^1.0.30001646"
+    fraction.js: "npm:^4.3.7"
+    normalize-range: "npm:^0.1.2"
+    picocolors: "npm:^1.0.1"
+    postcss-value-parser: "npm:^4.2.0"
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: 10/d3c4b562fc4af2393623a0207cc336f5b9f94c4264ae1c316376904c279702ce2b12dc3f27205f491195d1e29bb52ffc269970ceb0f271f035fadee128a273f7
+  languageName: node
+  linkType: hard
+
 "available-typed-arrays@npm:^1.0.7":
   version: 1.0.7
   resolution: "available-typed-arrays@npm:1.0.7"
@@ -4241,6 +4259,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browserslist@npm:^4.23.3":
+  version: 4.24.4
+  resolution: "browserslist@npm:4.24.4"
+  dependencies:
+    caniuse-lite: "npm:^1.0.30001688"
+    electron-to-chromium: "npm:^1.5.73"
+    node-releases: "npm:^2.0.19"
+    update-browserslist-db: "npm:^1.1.1"
+  bin:
+    browserslist: cli.js
+  checksum: 10/11fda105e803d891311a21a1f962d83599319165faf471c2d70e045dff82a12128f5b50b1fcba665a2352ad66147aaa248a9d2355a80aadc3f53375eb3de2e48
+  languageName: node
+  linkType: hard
+
 "browserslist@npm:^4.24.0":
   version: 4.24.3
   resolution: "browserslist@npm:4.24.3"
@@ -4381,6 +4413,13 @@ __metadata:
   version: 1.0.30001688
   resolution: "caniuse-lite@npm:1.0.30001688"
   checksum: 10/2125e900af866ee211c66beca01220c98e72c8a91d25c87b8ab456d3916f56fb1be5feef72556bca746da7aa852fc0118a04669f5ec2e6511eb77c960479e1c0
+  languageName: node
+  linkType: hard
+
+"caniuse-lite@npm:^1.0.30001646":
+  version: 1.0.30001697
+  resolution: "caniuse-lite@npm:1.0.30001697"
+  checksum: 10/cd0ca97e71f4157ff3d26990a24122586a973a14086ad43c459c2f0f2f9876b327eee57c2315bb04bd5e826e77d0b6f55723c583c78be0eaf0f3f171afaf7eff
   languageName: node
   linkType: hard
 
@@ -5967,6 +6006,13 @@ __metadata:
     combined-stream: "npm:^1.0.8"
     mime-types: "npm:^2.1.12"
   checksum: 10/6adb1cff557328bc6eb8a68da205f9ae44ab0e88d4d9237aaf91eed591ffc64f77411efb9016af7d87f23d0a038c45a788aa1c6634e51175c4efa36c2bc53774
+  languageName: node
+  linkType: hard
+
+"fraction.js@npm:^4.3.7":
+  version: 4.3.7
+  resolution: "fraction.js@npm:4.3.7"
+  checksum: 10/bb5ebcdeeffcdc37b68ead3bdfc244e68de188e0c64e9702197333c72963b95cc798883ad16adc21588088b942bca5b6a6ff4aeb1362d19f6f3b629035dc15f5
   languageName: node
   linkType: hard
 
@@ -8302,6 +8348,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"normalize-range@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "normalize-range@npm:0.1.2"
+  checksum: 10/9b2f14f093593f367a7a0834267c24f3cb3e887a2d9809c77d8a7e5fd08738bcd15af46f0ab01cc3a3d660386f015816b5c922cea8bf2ee79777f40874063184
+  languageName: node
+  linkType: hard
+
 "npm-run-path@npm:^4.0.0, npm-run-path@npm:^4.0.1":
   version: 4.0.1
   resolution: "npm-run-path@npm:4.0.1"
@@ -8621,7 +8674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1.0.0, picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.0.1, picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: 10/e1cf46bf84886c79055fdfa9dcb3e4711ad259949e3565154b004b260cd356c5d54b31a1437ce9782624bf766272fe6b0154f5f0c744fb7af5d454d2b60db045
@@ -8662,6 +8715,13 @@ __metadata:
   version: 1.0.0
   resolution: "possible-typed-array-names@npm:1.0.0"
   checksum: 10/8ed3e96dfeea1c5880c1f4c9cb707e5fb26e8be22f14f82ef92df20fd2004e635c62ba47fbe8f2bb63bfd80dac1474be2fb39798da8c2feba2815435d1f749af
+  languageName: node
+  linkType: hard
+
+"postcss-value-parser@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "postcss-value-parser@npm:4.2.0"
+  checksum: 10/e4e4486f33b3163a606a6ed94f9c196ab49a37a7a7163abfcd469e5f113210120d70b8dd5e33d64636f41ad52316a3725655421eb9a1094f1bcab1db2f555c62
   languageName: node
   linkType: hard
 
@@ -10241,6 +10301,7 @@ __metadata:
     "@types/node": "npm:^22"
     "@types/react": "npm:^19"
     "@types/react-dom": "npm:^19"
+    autoprefixer: "npm:^10.4.20"
     cypress: "npm:^13.16.1"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.1.0"
