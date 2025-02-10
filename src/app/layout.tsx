@@ -6,6 +6,10 @@ import "@/styles/globals/globals.scss";
 export const metadata: Metadata = {
   title: "Victor Levasseur Tech",
   description: "TODO",
+  metadataBase: new URL('https://www.victorlevasseur.tech'),
+  alternates: {
+    canonical: './',
+  }
 };
 
 export const viewport: Viewport = {
