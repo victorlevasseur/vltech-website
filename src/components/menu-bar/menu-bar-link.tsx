@@ -1,6 +1,7 @@
 import React from "react";
 
 import styles from "./menu-bar-link.module.scss";
+import Link from "next/link";
 
 interface MenuBarLinkProps {
   label: string;
@@ -10,12 +11,12 @@ interface MenuBarLinkProps {
 
 const MenuBarLink: React.FC<MenuBarLinkProps> = (props) => {
   return (
-    <a
+    <Link
       className={`${styles.container} ${props.active ? styles.active : ''}`}
       href={props.href}
     >
       {props.label}
-    </a>
+    </Link>
   );
 };
 

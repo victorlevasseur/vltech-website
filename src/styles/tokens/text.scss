@@ -3,12 +3,3 @@
 @mixin normal {
   @include font.normal;
 }
-
-@mixin button {
-  @include font.catchy;
-  
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 18px;
-  text-decoration: none;
-}

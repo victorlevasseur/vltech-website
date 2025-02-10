@@ -1,7 +1,7 @@
 @use './clamp.scss' as clamp;
 @use './font.scss' as font;
 
-@mixin paragraph {
+@mixin normal {
   @include font.normal;
 
   font-size: clamp.slope(16px, 18px);
@@ -47,3 +47,9 @@
   }
 }
 
+@mixin link {
+  @include font.catchy;
+  
+  font-weight: bold;
+  text-decoration: none;
+}

@@ -20,8 +20,26 @@
   color: colors.black();
 }
 
-p {
-  @include typo.paragraph;
+p, ul, ol {
+  @include typo.normal;
+}
+
+a {
+  @include typo.link;
+
+  color: colors.primary(500);
+
+  &:hover {
+    color: colors.primary(700);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.1em;
+  }
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
 }
 
 h1 {

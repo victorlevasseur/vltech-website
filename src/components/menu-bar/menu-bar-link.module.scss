@@ -1,8 +1,11 @@
 @use "@/styles/tokens/colors.scss";
-@use "@/styles/tokens/text.scss";
+@use "@/styles/tokens/typo.scss";
 
 .container {
-  @include text.button;
+  @include typo.link;
+
+  font-size: 14px;
+  line-height: 18px;
 
   display: inline-block;
 
