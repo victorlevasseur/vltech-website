@@ -1,21 +1,30 @@
 import { LayoutColumn } from "@/components/layout/layout-column";
 import { LayoutContainer } from "@/components/layout/layout-container";
+import { Page } from "@/components/layout/page";
 
 export default function Home() {
   return (
-    <LayoutContainer>
-      <LayoutColumn small={12} large={3}>Col 1</LayoutColumn>
-      <LayoutColumn small={1} medium={3}>Col 2</LayoutColumn>
-      <LayoutColumn>Col 3</LayoutColumn>
-      <LayoutColumn>Col 4</LayoutColumn>
-      <LayoutColumn>Col 5</LayoutColumn>
-      <LayoutColumn>Col 6</LayoutColumn>
-      <LayoutColumn>Col 7</LayoutColumn>
-      <LayoutColumn>Col 8</LayoutColumn>
-      <LayoutColumn>Col 9</LayoutColumn>
-      <LayoutColumn>Col 10</LayoutColumn>
-      <LayoutColumn>Col 11</LayoutColumn>
-      <LayoutColumn>Col 12</LayoutColumn>
-    </LayoutContainer>
+    <Page>
+      <LayoutContainer>
+        <LayoutColumn small={12}>
+          <h1>Victor Levasseur Tech</h1>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis nesciunt laboriosam fugiat! Possimus amet eaque ut provident. 
+            Tempore tempora natus explicabo amet eligendi non voluptates ullam, autem exercitationem quibusdam sapiente.
+          </p>
+          <h2>Victor Levasseur Tech</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+            ullamcorper, justo at suscipit lacinia, justo nisi aliquet dui, nec
+            fermentum nisl purus nec justo. Vivamus nec orci at mi ultrices
+            tincidunt. Sed vel nulla ac justo tincidunt luctus. Nullam
+            ullamcorper, justo at suscipit lacinia, justo nisi aliquet dui, nec
+            fermentum nisl purus nec justo. Vivamus nec orci at mi ultrices
+            tincidunt. Sed vel nulla ac justo tincidunt luctus.
+          </p>
+          <h3>Victor Levasseur Tech</h3>
+        </LayoutColumn>
+      </LayoutContainer>
+    </Page>
   );
 }

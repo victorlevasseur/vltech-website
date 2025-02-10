@@ -1,0 +1,49 @@
+@use './clamp.scss' as clamp;
+@use './font.scss' as font;
+
+@mixin paragraph {
+  @include font.normal;
+
+  font-size: clamp.slope(16px, 18px);
+  font-weight: 300;
+}
+
+@mixin heading-1 {
+  @include font.catchy;
+
+  font-size: clamp.slope(24px, 32px);
+  font-weight: bold;
+
+  margin: 18px 0;
+
+  &:not(:first-child) {
+    margin-top: 36px;
+  }
+}
+
+@mixin heading-2 {
+  @include font.catchy;
+
+  font-size: clamp.slope(18px, 24px);
+  font-weight: 600;
+
+  margin: 12px 0;
+
+  &:not(:first-child) {
+    margin-top: 24px;
+  }
+}
+
+@mixin heading-3 {
+  @include font.catchy;
+
+  font-size: clamp.slope(16px, 20px);
+  font-weight: 600;
+
+  margin: 8px 0;
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+

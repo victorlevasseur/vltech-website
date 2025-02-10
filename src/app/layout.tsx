@@ -31,7 +31,7 @@ export default function RootLayout({
           ${firaSans.variable} 
           ${firaCode.variable}`}
       >
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );

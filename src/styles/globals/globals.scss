@@ -1,3 +1,7 @@
+@use '../tokens/colors.scss' as colors;
+@use '../tokens/font.scss' as font;
+@use '../tokens/typo.scss' as typo;
+
 @import 'modern-normalize/modern-normalize.css';
 
 @import 'colors.css';
@@ -10,4 +14,24 @@
   padding: 8px;
 }
 
+* {
+  @include font.normal;
+  
+  color: colors.black();
+}
 
+p {
+  @include typo.paragraph;
+}
+
+h1 {
+  @include typo.heading-1;
+}
+
+h2 {
+  @include typo.heading-2;
+}
+
+h3 {
+  @include typo.heading-3;
+}
