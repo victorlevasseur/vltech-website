@@ -1,7 +1,6 @@
 import { LayoutColumn } from "@/components/layout/layout-column";
 import { LayoutContainer } from "@/components/layout/layout-container";
 import { Page } from "@/components/layout/page";
-import MenuBarLink from "@/components/menu-bar/menu-bar-link";
 
 export default function Home() {
   return (
@@ -10,7 +9,7 @@ export default function Home() {
         <LayoutColumn small={12}>
           <h1>Victor Levasseur</h1>
 
-          <p><em>Avec mon expérience à la fois technique et stratégique, je suis capable de concevoir des solutions robustes et adaptées à vos besoins qu'il s'agisse de performance, de scalabilité ou de sécurité.</em></p>
+          <p><em>Avec mon expérience à la fois technique et stratégique, je suis capable de concevoir des solutions robustes et adaptées à vos besoins qu&apos;il s&apos;agisse de performance, de scalabilité ou de sécurité.</em></p>
 
           <p>Je suis en mesure d&apos;intervenir sur tous les aspects de votre projet :</p>
           <ul>
