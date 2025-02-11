@@ -2223,6 +2223,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/third-parties@npm:^15.1.7":
+  version: 15.1.7
+  resolution: "@next/third-parties@npm:15.1.7"
+  dependencies:
+    third-party-capital: "npm:1.0.20"
+  peerDependencies:
+    next: ^13.0.0 || ^14.0.0 || ^15.0.0
+    react: ^18.2.0 || 19.0.0-rc-de68d2f4-20241204 || ^19.0.0
+  checksum: 10/efdee642cea9fffcb5a221d4def90a2d4a6fefcddb4b6ef1ceb5f73da3576271e217b273a1e4cf77aceb4a521ca15ea7b02b118f78dbc5387b7520b6370d92b2
+  languageName: node
+  linkType: hard
+
 "@node-minify/core@npm:^8.0.6":
   version: 8.0.6
   resolution: "@node-minify/core@npm:8.0.6"
@@ -9871,6 +9883,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"third-party-capital@npm:1.0.20":
+  version: 1.0.20
+  resolution: "third-party-capital@npm:1.0.20"
+  checksum: 10/40e2531b428a21f05531fc62ef82859c0071211eff09588baf75d4b525096bbdb4f93e17e2d538849db8d4fc3cceb074933d7be59fddc26f86718fbbe852a97f
+  languageName: node
+  linkType: hard
+
 "throttleit@npm:^1.0.0":
   version: 1.0.1
   resolution: "throttleit@npm:1.0.1"
@@ -10293,6 +10312,7 @@ __metadata:
   resolution: "vltech-website@workspace:."
   dependencies:
     "@eslint/eslintrc": "npm:^3"
+    "@next/third-parties": "npm:^15.1.7"
     "@opennextjs/aws": "npm:^3.2.2"
     "@tailwindcss/postcss": "npm:^4.0.0"
     "@testing-library/dom": "npm:^10.4.0"
