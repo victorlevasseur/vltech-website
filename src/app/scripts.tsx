@@ -1,9 +1,10 @@
 import {GoogleTagManager} from "@next/third-parties/google";
+import {CONFIG} from "@/config";
 
 export const Scripts = () => {
   return (
     <>
-      <GoogleTagManager gtmId={'GTM-TPXBMK83'} />
+      {CONFIG.gtmId ? <GoogleTagManager gtmId={CONFIG.gtmId} /> : null}
     </>
   )
 }
