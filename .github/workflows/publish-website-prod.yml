@@ -1,0 +1,47 @@
+name: Publish website prod
+run-name: Publish website prod
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    defaults:
+      run:
+        working-directory: terraform
+    steps:
+      - uses: actions/checkout@v4
+
+      # Building website for open-next to plan the Terraform arch
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+        
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build OpenNext
+        run: yarn run open-next:build
+      
+      # Terraform checks
+      - uses: hashicorp/setup-terraform@v3
+      
+      - name: Terraform Init
+        id: init
+        run: terraform init -input=false
+      
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan -input=false -out=tfplan
+      
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply -input=false tfplan
