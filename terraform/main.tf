@@ -53,7 +53,7 @@ module "single_zone" {
   folder_path = "../.open-next"
 
   domain_config = {
-    include_www = true
+    sub_domain = "www"
     hosted_zones = [
       {
         name = "victorlevasseur.tech"
@@ -65,4 +65,20 @@ module "single_zone" {
   }
 
   open_next_version = "v3.1.0"
+}
+
+module "http-redirect" {
+  source = "neovops/http-redirect/aws"
+
+  redirect_mapping = {
+    "victorlevasseur.tech" = "https://www.victorlevasseur.tech",
+  }
+
+  dns_zone = "victorlevasseur.tech"
+
+  providers = {
+    aws           = aws
+    aws.route53   = aws
+    aws.us-east-1 = aws.global
+  }
 }
