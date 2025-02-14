@@ -1,0 +1,31 @@
+@use '@/styles/tokens/colors' as colors;
+@use '@/styles/tokens/font' as font;
+
+.header {
+  flex: 0 0 auto;
+
+  background-color: colors.white();
+}
+
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logoContainer {
+  @include font.catchy();
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
