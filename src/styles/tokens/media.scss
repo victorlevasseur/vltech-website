@@ -26,3 +26,17 @@ $breakpoints: (
     @warn "Minimum breakpoint '#{$min-breakpoint}' not found in \$breakpoints map.";
   }
 }
+
+@each $breakpoint, $size in $breakpoints {
+  .hide-smaller-#{$breakpoint} {
+    @include smaller($breakpoint) {
+      display: none;
+    }
+  }
+
+  .hide-larger-or-eq-#{$breakpoint} {
+    @include larger-or-eq($breakpoint) {
+      display: none;
+    }
+  }
+}
