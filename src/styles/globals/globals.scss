@@ -6,18 +6,15 @@
 
 @import 'colors.css';
 
-/* For testing to REMOVE */
-.test-container {
-  display: flex; 
-  flex-direction: row; 
-  gap: 8px;
-  padding: 8px;
-}
-
 * {
   @include font.normal;
   
   color: colors.black();
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
 }
 
 p, ul, ol {
