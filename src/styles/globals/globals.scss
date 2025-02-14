@@ -1,23 +1,21 @@
 @use '../tokens/colors.scss' as colors;
 @use '../tokens/font.scss' as font;
+@use '../tokens/media.scss' as media;
 @use '../tokens/typo.scss' as typo;
 
 @import 'modern-normalize/modern-normalize.css';
 
 @import 'colors.css';
 
-/* For testing to REMOVE */
-.test-container {
-  display: flex; 
-  flex-direction: row; 
-  gap: 8px;
-  padding: 8px;
-}
-
 * {
   @include font.normal;
   
   color: colors.black();
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
 }
 
 p, ul, ol {
@@ -52,4 +50,18 @@ h2 {
 
 h3 {
   @include typo.heading-3;
+}
+
+@each $breakpoint, $size in media.$breakpoints {
+  .hide-smaller-#{$breakpoint} {
+    @include media.smaller($breakpoint) {
+      display: none;
+    }
+  }
+
+  .hide-larger-or-eq-#{$breakpoint} {
+    @include media.larger-or-eq($breakpoint) {
+      display: none;
+    }
+  }
 }

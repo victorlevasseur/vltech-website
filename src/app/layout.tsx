@@ -1,8 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { firaCode, firaSans } from "@/fonts";
 
+import {Footer} from "./footer";
+import {Header} from "./header";
+import {Scripts} from "./scripts";
+
 import "@/styles/globals/globals.scss";
-import {Scripts} from "@/app/scripts";
+
+import styles from './layout.module.scss';
 
 export const metadata: Metadata = {
   title: "Victor Levasseur Tech",
@@ -30,10 +35,13 @@ export default function RootLayout({
       <Scripts />
       <body
         className={`
+          ${styles.body}
           ${firaSans.variable} 
           ${firaCode.variable}`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
