@@ -15,7 +15,7 @@ export const Header: React.FC = () => {
     <nav className={styles.header} aria-label="main-header">
       <LayoutContainer containerClassName={styles.headerContainer} enableGrid={false}>
         <div className={styles.logoContainer}>
-          <Image src={'/assets/vltech_logo.png'} alt={'Victor Levasseur Tech'} width={64} height={64} />
+          <Image quality={95} src={'/assets/vltech_logo.png'} alt={'Victor Levasseur Tech'} width={64} height={64} />
           <span className={'hide-smaller-large'}>Victor<br />Levasseur<br />Tech</span>
         </div>
         <div className={styles.linksContainer}>
