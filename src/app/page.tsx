@@ -1,6 +1,10 @@
 import { LayoutColumn } from "@/components/layout/layout-column";
 import { LayoutContainer } from "@/components/layout/layout-container";
 import { Page } from "@/components/layout/page";
+import {LinkButton} from "@/components/button/link-button";
+import {CONFIG} from "@/config";
+
+import styles from './page.module.scss';
 
 export default function Home() {
   return (
@@ -24,7 +28,21 @@ export default function Home() {
     
           <p>A l&apos;écoute pour découvrir vos projets et vous proposer une prestation adaptée.</p>
 
-          <p><em>Ce site est encore en construction, retrouvez toutes les infos et contactez moi sur <a href="https://www.malt.fr/profile/victorlevasseur2">mon profil Malt</a>.</em></p>
+
+
+          <div className={styles.ctaContainer}>
+            <LinkButton
+              label={'Discuter de votre projet'}
+              href={CONFIG.calendlyUrl}
+              target={'_blank'} />
+            <LinkButton
+              variant={'secondary'}
+              label={'Consulter mon profil sur Malt'}
+              href={CONFIG.maltUrl}
+              target={'_blank'} />
+          </div>
+          <p></p>
+          <p><em>Ce site est en construction, revenez vite pour découvrir plus de contenu.</em></p>
         </LayoutColumn>
       </LayoutContainer>
     </Page>
