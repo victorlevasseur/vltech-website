@@ -1,0 +1,47 @@
+@use "@/styles/tokens/animation.scss";
+@use "@/styles/tokens/colors.scss";
+@use "@/styles/tokens/typo.scss";
+
+$padding-x: 14px;
+$padding-y: 18px;
+$border-width: 2px;
+
+.container {
+  @include typo.link;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  display: inline-block;
+
+  padding: $padding-x $padding-y;
+  border-radius: 6px;
+
+  text-decoration: none !important;
+
+  @include animation.animate(background-color, color, border);
+}
+
+.primary {
+  background-color: colors.primary(500);
+  color: colors.white();
+
+  &:hover {
+    background-color: colors.primary(700);
+    color: colors.white();
+  }
+}
+
+.secondary {
+  background-color: colors.white();
+  color: colors.primary(500);
+
+  border: $border-width solid colors.white();
+
+  padding: $padding-x - $border-width $padding-y - $border-width;
+
+  &:hover {
+    border: $border-width solid colors.primary(700);
+    color: colors.primary(700);
+  }
+}
