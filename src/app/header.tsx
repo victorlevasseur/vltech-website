@@ -1,10 +1,10 @@
-"use client"
+'use client';
 
 import styles from './header.module.scss';
-import {LayoutContainer} from "@/components/layout/layout-container";
-import Image from "next/image";
-import MenuBarLink from "@/components/menu-bar/menu-bar-link";
-import {usePathname} from "next/navigation";
+import { LayoutContainer } from '@/components/layout/layout-container';
+import Image from 'next/image';
+import MenuBarLink from '@/components/menu-bar/menu-bar-link';
+import { usePathname } from 'next/navigation';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -12,10 +12,26 @@ export const Header: React.FC = () => {
 
   return (
     <nav className={styles.header} aria-label="main-header">
-      <LayoutContainer containerClassName={styles.headerContainer} enableGrid={false}>
+      <LayoutContainer
+        containerClassName={styles.headerContainer}
+        enableGrid={false}
+      >
         <div className={styles.logoContainer}>
-          <Image quality={95} priority={true} src={'/assets/vltech_logo.png'} alt={'Victor Levasseur Tech'} width={64} height={64} />
-          <span className={'hide-smaller-large'}>Victor<br />Levasseur<br />Tech</span>
+          <Image
+            quality={95}
+            priority={true}
+            src={'/assets/vltech_logo.png'}
+            alt={'Victor Levasseur Tech'}
+            width={64}
+            height={64}
+          />
+          <span className={'hide-smaller-large'}>
+            Victor
+            <br />
+            Levasseur
+            <br />
+            Tech
+          </span>
         </div>
         <div className={styles.linksContainer}>
           <MenuBarLink label={'Accueil'} href={'/'} active={isActive('/')} />
@@ -23,4 +39,4 @@ export const Header: React.FC = () => {
       </LayoutContainer>
     </nav>
   );
-}
+};

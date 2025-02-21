@@ -2,7 +2,7 @@
   --color-black: #212427;
   --color-white: #ffffff;
   --color-transparent: #ffffff00;
-  
+
   /* Primary colors */
   --color-primary-50: #e8f3ff;
   --color-primary-100: #b9daff;
@@ -37,5 +37,5 @@
   --color-neutral-600: #7c7c7c;
   --color-neutral-700: #616161;
   --color-neutral-800: #4b4b4b;
-  --color-neutral-900: #393939; 
+  --color-neutral-900: #393939;
 }

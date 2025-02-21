@@ -1,27 +1,27 @@
-import type { Metadata, Viewport } from "next";
-import { firaCode, firaSans } from "@/fonts";
+import type { Metadata, Viewport } from 'next';
+import { firaCode, firaSans } from '@/fonts';
 
-import {Footer} from "./footer";
-import {Header} from "./header";
-import {Scripts} from "./scripts";
+import { Footer } from './footer';
+import { Header } from './header';
+import { Scripts } from './scripts';
 
-import "@/styles/globals/globals.scss";
+import '@/styles/globals/globals.scss';
 
 import styles from './layout.module.scss';
 
 export const metadata: Metadata = {
-  title: "Victor Levasseur Tech",
-  description: "TODO",
+  title: 'Victor Levasseur Tech',
+  description: 'TODO',
   metadataBase: new URL('https://www.victorlevasseur.tech'),
   alternates: {
     canonical: './',
-  }
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: '#000000',
   initialScale: 1,
-  width: "device-width",
+  width: 'device-width',
   maximumScale: 1,
 };
 

@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Open Next
 .open-next
+
+# Terraform
+terraform/.terraform

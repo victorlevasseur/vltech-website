@@ -5,9 +5,5 @@ export interface PageProps {
 }
 
 export const Page = ({ children }: PageProps) => {
-  return (
-    <main className={styles.main}>
-      {children}
-    </main>
-  );
-}
+  return <main className={styles.main}>{children}</main>;
+};

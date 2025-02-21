@@ -6,20 +6,26 @@ export interface LayoutColumnProps {
 
   small?: number;
   medium?: number;
-  large?: number
+  large?: number;
 }
 
 export const LayoutColumn: React.FC<LayoutColumnProps> = (props) => {
-  const {small = 1, medium, large} = props;
+  const { small = 1, medium, large } = props;
 
   return (
-    <div 
+    <div
       className={
-        (large ? styles['col-large-' + large] : '') + ' ' +
-        (medium ? styles['col-medium-' + medium] : '') + ' ' +
-        styles['col-small-' + small] + ' ' +
-        ' ' + (props.className ?? '')}>
+        (large ? styles['col-large-' + large] : '') +
+        ' ' +
+        (medium ? styles['col-medium-' + medium] : '') +
+        ' ' +
+        styles['col-small-' + small] +
+        ' ' +
+        ' ' +
+        (props.className ?? '')
+      }
+    >
       {props.children}
     </div>
   );
-}
+};

@@ -1,5 +1,5 @@
-@use "@/styles/tokens/colors.scss";
-@use "@/styles/tokens/typo.scss";
+@use '@/styles/tokens/colors.scss';
+@use '@/styles/tokens/typo.scss';
 
 .container {
   @include typo.link;

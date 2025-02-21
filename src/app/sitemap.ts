@@ -1,5 +1,5 @@
-import type { MetadataRoute } from 'next'
-import {CONFIG} from "@/config";
+import type { MetadataRoute } from 'next';
+import { CONFIG } from '@/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -8,6 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
-    }
-  ]
+    },
+  ];
 }

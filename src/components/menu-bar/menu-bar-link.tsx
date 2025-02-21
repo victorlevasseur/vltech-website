@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import styles from "./menu-bar-link.module.scss";
-import Link from "next/link";
+import styles from './menu-bar-link.module.scss';
+import Link from 'next/link';
 
 interface MenuBarLinkProps {
   label: string;

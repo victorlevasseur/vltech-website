@@ -3,7 +3,11 @@
 @mixin animate($properties...) {
   $transition_value: ();
   @each $property in $properties {
-    $transition_value: list.append($transition_value, ($property 200ms ease-in-out), $separator: comma);
+    $transition_value: list.append(
+      $transition_value,
+      ($property 200ms ease-in-out),
+      $separator: comma
+    );
   }
 
   transition: $transition_value;

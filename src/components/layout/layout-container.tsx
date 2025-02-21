@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import styles from './layout-container.module.scss'
+import styles from './layout-container.module.scss';
 
 export interface LayoutContainerProps {
   children: React.ReactNode;
@@ -15,7 +15,15 @@ export const LayoutContainer: React.FC<LayoutContainerProps> = (props) => {
 
   return (
     <div className={styles.root + ' ' + (props.rootClassName ?? '')}>
-      <div className={styles.container + ' ' + (props.containerClassName ?? '') + ' ' + (enableGrid ? styles.grid : '')}>
+      <div
+        className={
+          styles.container +
+          ' ' +
+          (props.containerClassName ?? '') +
+          ' ' +
+          (enableGrid ? styles.grid : '')
+        }
+      >
         {props.children}
       </div>
     </div>

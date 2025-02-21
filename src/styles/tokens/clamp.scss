@@ -2,9 +2,21 @@
 @use 'sass:math';
 @use './media.scss' as media;
 
-@function slope($size-at-min-width, $size-at-max-width, $min-width: map.get(media.$breakpoints, 'small'), $max-width: map.get(media.$breakpoints, 'large')) {
-  $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
+@function slope(
+  $size-at-min-width,
+  $size-at-max-width,
+  $min-width: map.get(media.$breakpoints, 'small'),
+  $max-width: map.get(media.$breakpoints, 'large')
+) {
+  $slope: math.div(
+    $size-at-max-width - $size-at-min-width,
+    $max-width - $min-width
+  );
   $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
-  $return-value: clamp(#{$size-at-min-width}, #{$y-axis-intersection} + #{$slope} * 100vw, #{$size-at-max-width});
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
   @return $return-value;
 }
