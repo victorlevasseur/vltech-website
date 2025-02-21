@@ -20,6 +20,8 @@ html, body {
 
 p, ul, ol {
   @include typo.normal;
+
+  margin: 16px 0;
 }
 
 a {
