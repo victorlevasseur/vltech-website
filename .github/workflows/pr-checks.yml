@@ -4,35 +4,72 @@ on:
   pull_request:
 
 jobs:
-  Check-Deployment:
+  Storybook-Testing:
     runs-on: ubuntu-latest
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_REGION: eu-central-1
-    defaults:
-      run:
-        working-directory: terraform
-    permissions:
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
-      # Building website for open-next to plan the Terraform arch
       - name: Enable Corepack
         run: corepack enable
       - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: 22
-
+          cache: yarn
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --immutable
 
-      - name: Cypress - Components testing
+      - name: Install Playwright
+        run: yarn dlx playwright install --with-deps
+      - name: Build Storybook
+        run: yarn storybook:build --quiet
+      - name: Serve Storybook and run tests
+        run: |
+          yarn dlx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "yarn dlx http-server storybook-static --port 6006 --silent" \
+            "yarn dlx wait-on tcp:127.0.0.1:6006 && yarn storybook:test"
+
+  Cypress-E2E-Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Cypress - E2E testing
         uses: cypress-io/github-action@v6
         with:
-          component: true
+          install: false
+          start: yarn next:dev
+
+  Check-Deployment:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_REGION: eu-central-1
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --immutable
 
       - name: Build OpenNext
         run: yarn run open-next:build
@@ -41,56 +78,25 @@ jobs:
       - uses: hashicorp/setup-terraform@v3
 
       - name: Terraform fmt
-        id: fmt
         run: terraform fmt -check
         continue-on-error: true
+        working-directory: terraform
 
       - name: Terraform Init
-        id: init
         run: terraform init -input=false
+        working-directory: terraform
 
       - name: Terraform Validate
-        id: validate
         run: terraform validate -no-color
+        working-directory: terraform
 
       - name: Terraform Plan
-        id: plan
-        run: terraform plan -no-color
+        run: terraform plan -no-color | tee terraform_plan_output.txt
         continue-on-error: true
+        working-directory: terraform
 
-      - uses: actions/github-script@v7
-        if: github.event_name == 'pull_request'
-        env:
-          PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+      - name: Print job summary
+        uses: sgametrio/terraform-summary-action@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
-            #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
-            #### Terraform Validation 🤖\`${{ steps.validate.outcome }}\`
-            <details><summary>Validation Output</summary>
-
-            \`\`\`\n
-            ${{ steps.validate.outputs.stdout }}
-            \`\`\`
-
-            </details>
-
-            #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
-
-            <details><summary>Show Plan</summary>
-
-            \`\`\`\n
-            ${process.env.PLAN}
-            \`\`\`
-
-            </details>
-
-            *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`terraform\`, Workflow: \`${{ github.workflow }}\`*`;
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: output
-            })
+          title: 'Terraform Plan'
+          log-file: terraform/terraform_plan_output.txt
