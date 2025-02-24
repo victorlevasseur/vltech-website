@@ -23,25 +23,25 @@ $border-width: 2px;
 }
 
 .primary {
-  background-color: colors.primary(500);
+  background-color: colors.primary(700);
   color: colors.white();
 
   &:hover {
-    background-color: colors.primary(700);
+    background-color: colors.primary(800);
     color: colors.white();
   }
 }
 
 .secondary {
   background-color: colors.white();
-  color: colors.primary(500);
+  color: colors.primary(700);
 
   border: $border-width solid colors.white();
 
   padding: $padding-x - $border-width $padding-y - $border-width;
 
   &:hover {
-    border: $border-width solid colors.primary(700);
-    color: colors.primary(700);
+    border: $border-width solid colors.primary(800);
+    color: colors.primary(800);
   }
 }
