@@ -27,7 +27,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install
 
       - name: Cypress - Components testing
         uses: cypress-io/github-action@v6
