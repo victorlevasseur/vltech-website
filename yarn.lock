@@ -8424,7 +8424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chromatic@npm:^11.15.0":
+"chromatic@npm:^11.15.0, chromatic@npm:^11.25.2":
   version: 11.25.2
   resolution: "chromatic@npm:11.25.2"
   peerDependencies:
@@ -17677,6 +17677,7 @@ __metadata:
     "@types/react-dom": "npm:^19.0.4"
     autoprefixer: "npm:^10.4.20"
     axe-playwright: "npm:^2.1.0"
+    chromatic: "npm:^11.25.2"
     cypress: "npm:^14.0.3"
     eslint: "npm:^9.20.1"
     eslint-config-next: "npm:15.1.7"
