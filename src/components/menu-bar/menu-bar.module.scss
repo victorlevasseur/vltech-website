@@ -1,5 +1,5 @@
-@use '@/styles/tokens/colors' as colors;
-@use '@/styles/tokens/font' as font;
+@use '../../styles/tokens/colors';
+@use '../../styles/tokens/font';
 
 .header {
   flex: 0 0 auto;

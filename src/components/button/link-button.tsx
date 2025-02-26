@@ -1,7 +1,7 @@
+import { HTMLAttributeAnchorTarget } from 'react';
 import Link from 'next/link';
 
 import styles from './link-button.module.scss';
-import { HTMLAttributeAnchorTarget } from 'react';
 
 export interface LinkButtonProps {
   label: string;
