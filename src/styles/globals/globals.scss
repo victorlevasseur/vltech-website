@@ -77,3 +77,13 @@ button, input[type="submit"], input[type="reset"] {
   cursor: pointer;
   outline: inherit;
 }
+
+.ReactModal__Overlay {
+  background-color: color-mix(in srgb, colors.neutral(300) 50%, transparent) !important;
+}
+
+.ReactModal__Content {
+  background-color: colors.white() !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
