@@ -4,7 +4,7 @@ import {MenuBar} from "./menu-bar";
 const meta: Meta<typeof MenuBar> = {
   component: MenuBar,
   parameters: {
-    layout: 'fullscreen',
+    withMargins: false,
   }
 };
 
