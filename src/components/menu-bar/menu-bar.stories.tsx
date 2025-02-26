@@ -1,10 +1,14 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {MenuBar} from "./menu-bar";
+import {ALL_MODES} from "../../../.storybook/modes";
 
 const meta: Meta<typeof MenuBar> = {
   component: MenuBar,
   parameters: {
     withMargins: false,
+    chromatic: {
+      modes: ALL_MODES
+    }
   }
 };
 

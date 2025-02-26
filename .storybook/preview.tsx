@@ -1,26 +1,12 @@
-import type { Preview } from '@storybook/react';
+import type {Preview} from '@storybook/react';
 
 import '../src/styles/globals/globals.scss';
+import {StoryDecorator} from "./story-decorator";
+import {VIEWPORTS} from "./viewports";
 
 const preview: Preview = {
   decorators: [
-    (Story, context) => {
-      // A decorator to force paddings, even for Chromatic,
-      // (which ignores the default layout margins...).
-      //
-      // Add a "withMargins" parameter (true by default) to allow stories to
-      // disable the padding.
-      console.log(context);
-      if (context.parameters.withMargins === false) {
-        return (<Story />);
-      } else {
-        return (
-          <div style={{ padding: '16px' }}>
-            <Story />
-          </div>
-        )
-      }
-    }
+    StoryDecorator
   ],
   parameters: {
     controls: {
@@ -30,6 +16,11 @@ const preview: Preview = {
       },
     },
     layout: 'fullscreen',
+    viewport: {
+      viewports: {
+        ...VIEWPORTS
+      }
+    }
   },
 };
 

@@ -9,7 +9,7 @@ $breakpoints: (
 
 @mixin smaller($max-breakpoint) {
   @if map.has-key($breakpoints, $max-breakpoint) {
-    @media (max-width: map.get($breakpoints, $max-breakpoint)) {
+    @media (max-width: (map.get($breakpoints, $max-breakpoint) - 1px)) {
       @content;
     }
   } @else {
@@ -19,7 +19,7 @@ $breakpoints: (
 
 @mixin larger-or-eq($min-breakpoint) {
   @if map.has-key($breakpoints, $min-breakpoint) {
-    @media (min-width: map.get($breakpoints, $min-breakpoint)) {
+    @media (min-width: (map.get($breakpoints, $min-breakpoint) - 1px)) {
       @content;
     }
   } @else {
