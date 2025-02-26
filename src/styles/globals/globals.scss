@@ -60,13 +60,13 @@ h3 {
 @each $breakpoint, $size in media.$breakpoints {
   .hide-smaller-#{$breakpoint} {
     @include media.smaller($breakpoint) {
-      display: none;
+      display: none !important;
     }
   }
 
   .hide-larger-or-eq-#{$breakpoint} {
     @include media.larger-or-eq($breakpoint) {
-      display: none;
+      display: none !important;
     }
   }
 }
