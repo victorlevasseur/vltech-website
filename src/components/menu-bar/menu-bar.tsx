@@ -3,6 +3,10 @@ import Image from "next/image";
 import MenuBarLink from "@/components/menu-bar/menu-bar-link";
 
 import styles from './menu-bar.module.scss';
+import {MenuBarPopupButton} from "@/components/menu-bar/menu-bar-popup-button";
+import {useCallback, useMemo, useState} from "react";
+import ReactModal from "react-modal";
+import {firaCode, firaSans} from "@/fonts";
 
 export interface MenuBarItem {
   id: string;
@@ -18,6 +22,31 @@ export interface MenuBarProps {
 }
 
 export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
+  const currentActiveItem = items.find((item) => item.onlyRootPageActive ?
+    item.href === currentPathname :
+    (currentPathname?.startsWith(item.href) ?? false));
+
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+
+  const openMobileMenu = useCallback(() => {
+    setMobileNavOpen(true);
+  }, [setMobileNavOpen]);
+
+  const closeMobileMenu = useCallback(() => {
+    setMobileNavOpen(false);
+  }, [setMobileNavOpen]);
+
+  const allLinks = useMemo(() => {
+    return items.map((item) => (
+      <MenuBarLink
+        key={item.id}
+        label={item.label}
+        href={item.href}
+        onClick={closeMobileMenu}
+        active={item.id === currentActiveItem?.id} />
+    ));
+  }, [items, closeMobileMenu, currentActiveItem?.id])
+
   return (
     <nav className={styles.header} aria-label="main-header">
       <LayoutContainer
@@ -42,17 +71,22 @@ export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
           </span>
         </div>
         <div className={'hide-smaller-large ' + styles.linksContainer}>
-          {
-            items.map((item) => (
-              <MenuBarLink
-                key={item.id}
-                label={item.label}
-                href={item.href}
-                active={item.onlyRootPageActive ?
-                  item.href === currentPathname :
-                  (currentPathname?.startsWith(item.href) ?? false)} />
-            ))
-          }
+          { allLinks }
+        </div>
+        <div className={'hide-larger-or-eq-large ' + styles.linksContainer}>
+          <MenuBarPopupButton
+            label={currentActiveItem?.label ?? 'Naviguer'}
+            onClick={openMobileMenu} />
+          <ReactModal
+            ariaHideApp={false}
+            portalClassName={`${firaSans.variable} ${firaCode.variable}`}
+            isOpen={mobileNavOpen}
+            contentLabel={'Naviguer vers...'}
+            onRequestClose={closeMobileMenu}>
+            <div className={styles.mobileMenuContainer}>
+              { allLinks }
+            </div>
+          </ReactModal>
         </div>
       </LayoutContainer>
     </nav>

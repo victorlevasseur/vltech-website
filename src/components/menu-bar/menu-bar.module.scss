@@ -36,3 +36,10 @@
   display: flex;
   gap: 8px;
 }
+
+.mobileMenuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
