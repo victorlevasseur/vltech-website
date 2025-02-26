@@ -10,7 +10,7 @@ const meta: Meta<typeof MenuBarLink> = {
   },
   play: async ({canvasElement}) => {
     const canvas = within(canvasElement);
-    const link = await canvas.findByText('Foobar');
+    const link = canvas.getByRole('link');
     await expect(link.getAttribute('href')).toEqual('https://www.foobar.com/');
   }
 };
@@ -44,4 +44,3 @@ export const ActiveAndHover: Story = {
     }
   }
 }
-
