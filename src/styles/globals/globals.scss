@@ -1,11 +1,15 @@
-@use '../tokens/colors.scss' as colors;
-@use '../tokens/font.scss' as font;
-@use '../tokens/media.scss' as media;
-@use '../tokens/typo.scss' as typo;
+@use '../tokens/clamp.scss';
+@use '../tokens/colors.scss';
+@use '../tokens/font.scss';
+@use '../tokens/media.scss';
+@use '../tokens/typo.scss';
+@use './titles.scss';
 
 @import 'modern-normalize/modern-normalize.css';
 
 @import 'colors.css';
+
+@include titles.titles;
 
 html,
 body {
@@ -40,18 +44,6 @@ a {
 em {
   font-style: normal;
   font-weight: 600;
-}
-
-h1 {
-  @include typo.heading-1;
-}
-
-h2 {
-  @include typo.heading-2;
-}
-
-h3 {
-  @include typo.heading-3;
 }
 
 @each $breakpoint, $size in media.$breakpoints {

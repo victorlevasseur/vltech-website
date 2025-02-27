@@ -5,14 +5,30 @@ import { LinkButton } from '@/components/button/link-button';
 import { CONFIG } from '@/config';
 
 import styles from './page.module.scss';
+import Image from "next/image";
 
 export default function Home() {
   return (
     <Page>
       <LayoutContainer>
         <LayoutColumn small={12}>
-          <h1>Victor Levasseur</h1>
-
+          <hgroup>
+            <h1>Victor Levasseur</h1>
+            <p>
+              Tech Lead Java, Spring Boot, Angular, React et AWS en freelance.
+            </p>
+          </hgroup>
+        </LayoutColumn>
+        <LayoutColumn small={12} medium={5} large={4} className={styles.myselfPictureColumn}>
+          <Image
+            className={styles.myselfPicture}
+            src={'/assets/me.png'}
+            alt={'Victor Levasseur'}
+            fill
+            objectFit={'contain'}
+            sizes={'(max-width: 575px), 100vw, 33vw'}/>
+        </LayoutColumn>
+        <LayoutColumn small={12} medium={7} large={8}>
           <p>
             <em>
               Avec mon expérience à la fois technique et stratégique, je suis
@@ -50,12 +66,12 @@ export default function Home() {
             Votre projet a besoin de scaler ? Je peux également vous aider à
             recruter en interne des talents pour le pérenniser.
           </p>
-
+        </LayoutColumn>
+        <LayoutColumn small={12}>
           <p>
             A l&apos;écoute pour découvrir vos projets et vous proposer une
             prestation adaptée.
           </p>
-
           <div className={styles.ctaContainer}>
             <LinkButton
               label={'Discuter de votre projet'}

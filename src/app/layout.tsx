@@ -11,7 +11,11 @@ import styles from './layout.module.scss';
 
 export const metadata: Metadata = {
   title: 'Victor Levasseur Tech',
-  description: 'TODO',
+  description: 'Victor Levasseur, Tech Lead Java, Spring Boot, Angular, React et AWS en freelance.',
+  creator: 'Victor Levasseur',
+  authors: {
+    name: 'Victor Levasseur',
+  },
   metadataBase: new URL('https://www.victorlevasseur.tech'),
   alternates: {
     canonical: './',
