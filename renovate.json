@@ -4,6 +4,8 @@
     "config:recommended",
     ":dependencyDashboard"
   ],
+  "automergeType": "pr",
+  "automergeStrategy": "fast-forward",
   "rangeStrategy": "bump",
   "rebaseWhen": "automerging",
   "packageRules": [
@@ -11,5 +13,8 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
-  ]
+  ],
+  "npm": {
+    "minimumReleaseAge": "3 days"
+  }
 }
