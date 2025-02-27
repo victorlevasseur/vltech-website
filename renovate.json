@@ -4,5 +4,12 @@
     "config:recommended",
     ":dependencyDashboard"
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "rebaseWhen": "automerging",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
 }
