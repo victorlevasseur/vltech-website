@@ -10,7 +10,6 @@ export const Header: React.FC = () => {
     <MenuBar
       items={[
         { id: 'home', label: 'Accueil', href: '/', onlyRootPageActive: true },
-        { id: 'fake', label: 'Fake', href: '/fake' },
       ]}
       currentPathname={pathname} />
   );
