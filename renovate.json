@@ -5,7 +5,7 @@
     ":dependencyDashboard"
   ],
   "automergeType": "pr",
-  "automergeStrategy": "fast-forward",
+  "automergeStrategy": "rebase",
   "rangeStrategy": "bump",
   "rebaseWhen": "automerging",
   "packageRules": [
