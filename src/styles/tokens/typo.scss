@@ -11,7 +11,7 @@
 @mixin heading-1 {
   @include font.catchy;
 
-  font-size: clamp.slope(24px, 32px);
+  font-size: clamp.slope(28px, 36px);
   font-weight: bold;
 
   margin: 18px 0;
@@ -24,7 +24,7 @@
 @mixin heading-2 {
   @include font.catchy;
 
-  font-size: clamp.slope(18px, 24px);
+  font-size: clamp.slope(22px, 28px);
   font-weight: 600;
 
   margin: 12px 0;
@@ -37,7 +37,7 @@
 @mixin heading-3 {
   @include font.catchy;
 
-  font-size: clamp.slope(16px, 20px);
+  font-size: clamp.slope(18px, 22px);
   font-weight: 600;
 
   margin: 8px 0;
