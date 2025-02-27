@@ -50,7 +50,7 @@
     "@types/node": "^22.13.5",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "@types/react-modal": "^3",
+    "@types/react-modal": "^3.16.3",
     "autoprefixer": "^10.4.20",
     "axe-playwright": "^2.1.0",
     "chromatic": "^11.26.0",
