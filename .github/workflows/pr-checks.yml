@@ -20,7 +20,11 @@ jobs:
         run: yarn install --immutable
 
       - name: Run Jest unit tests
-        run: yarn jest
+        uses: willcaul/jest-github-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          test-command: "yarn jest"
 
 
   Storybook-Testing:
