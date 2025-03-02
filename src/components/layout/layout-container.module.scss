@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+@use '@/styles/tokens/clamp.scss';
 @use '@/styles/tokens/media.scss';
 
 .root {
@@ -28,7 +29,7 @@
 
     grid-template-columns: repeat(12, 1fr);
 
-    column-gap: clamp(12px, 1.6vw, 16px);
+    column-gap: clamp.slope(16px, 24px);
     row-gap: 24px;
   }
 }
