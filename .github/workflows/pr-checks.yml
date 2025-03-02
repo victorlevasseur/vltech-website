@@ -4,6 +4,25 @@ on:
   pull_request:
 
 jobs:
+  Unit-Tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Run Jest unit tests
+        run: yarn jest
+
+
   Storybook-Testing:
     runs-on: ubuntu-latest
     steps:
