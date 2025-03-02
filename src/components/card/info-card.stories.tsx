@@ -27,7 +27,14 @@ export const Standard: Story = {
 }
 
 export const StandardAndHover: Story = {
-
+  args: {
+    title: 'Card title'
+  },
+  parameters: {
+    pseudo: {
+      hover: true
+    }
+  }
 }
 
 export const WithLink: Story = {
