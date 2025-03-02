@@ -15,11 +15,13 @@ export interface InfoCardProps {
   className?: string;
 
   link?: InfoCardLink;
+
+  fullHeight?: boolean;
 }
 
 export const InfoCard: React.FC<InfoCardProps> = (props) => {
   return (
-    <div className={`${styles.container} ${props.className}`}>
+    <div className={`${styles.container} ${props.className} ${props.fullHeight ? styles.fullheight : ''}`}>
       <h2>{props.title}</h2>
       {props.children}
       {
