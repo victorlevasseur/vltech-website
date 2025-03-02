@@ -80,9 +80,8 @@ export default function Home() {
             />
             <LinkButton
               variant={'secondary'}
-              label={'Consulter mon profil sur Malt'}
-              href={CONFIG.maltUrl}
-              target={'_blank'}
+              label={'En apprendre plus sur mes compétences'}
+              href={'/skills'}
             />
           </div>
           <p></p>
