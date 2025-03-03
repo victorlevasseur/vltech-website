@@ -26,6 +26,12 @@ describe('parseTechKeywordFilter', () => {
     expect(parseTechKeywordFilter(['foo', <FakeComponent />, 'baz'], undefined)).toEqual('foobaz');
   });
 
+  test('should encode the tech keyword by replacing spaces and dots', () => {
+    expect(parseTechKeywordFilter(['foo bar'])).toEqual('foo-bar');
+    expect(parseTechKeywordFilter(['foo bar baz'])).toEqual('foo-bar-baz');
+    expect(parseTechKeywordFilter(['foo ba.r baz'])).toEqual('foo-bar-baz');
+  });
+
   test('should throw if no string children are found and no override is provided', () => {
     expect(() => parseTechKeywordFilter([], undefined)).toThrow();
     // eslint-disable-next-line react/jsx-key
