@@ -4200,9 +4200,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opennextjs/aws@npm:^3.5.0":
-  version: 3.5.0
-  resolution: "@opennextjs/aws@npm:3.5.0"
+"@opennextjs/aws@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "@opennextjs/aws@npm:3.5.1"
   dependencies:
     "@aws-sdk/client-cloudfront": "npm:3.398.0"
     "@aws-sdk/client-dynamodb": "npm:^3.398.0"
@@ -4220,7 +4220,7 @@ __metadata:
     urlpattern-polyfill: "npm:^10.0.0"
   bin:
     open-next: dist/index.js
-  checksum: 10/9f25ced835ed1e6de289e8d5a7bd421b8dba2686f30f875da25c04070254da801d5a899903f871f23656dfebe633c4bff219fcf1eb65684eb8d321f03a43e0f5
+  checksum: 10/3b493408a41039da1ffa4aa746f95e1bb02d0eae58cf2e63618a220dd23ae814b10857c1257bb37fd3efb2c998688591e20dc4c318e96ab0f15e15be92c34c85
   languageName: node
   linkType: hard
 
@@ -17772,7 +17772,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:^6.7.2"
     "@fortawesome/react-fontawesome": "npm:^0.2.2"
     "@next/third-parties": "npm:^15.2.0"
-    "@opennextjs/aws": "npm:^3.5.0"
+    "@opennextjs/aws": "npm:^3.5.1"
     "@storybook/addon-a11y": "npm:^8.6.2"
     "@storybook/addon-essentials": "npm:^8.6.2"
     "@storybook/addon-interactions": "npm:^8.6.2"
