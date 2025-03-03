@@ -2,18 +2,18 @@ import React, {Children} from "react";
 
 export const parseTechKeywordFilter = (children?: React.ReactNode, override?: string) => {
   const childrenArray = Children.toArray(children);
-  const computedInternalName = childrenArray
+  const computedTechnologyId = childrenArray
     .filter((child) => typeof child === "string")
     .reduce((text, part) => text + part, '');
 
-  const internalName = (override ?? computedInternalName)
+  const technologyId = (override ?? computedTechnologyId)
     .toLowerCase()
-    .replace(' ', '-')
-    .replace('.', '');
+    .replaceAll(' ', '-')
+    .replaceAll('.', '');
 
-  if (!internalName) {
-    throw Error('Unable to compute TechKeyword internal name, please provide one manually as a prop.');
+  if (!technologyId) {
+    throw Error('Unable to compute TechKeyword technology id, please provide one manually as a prop.');
   }
 
-  return internalName;
+  return technologyId;
 }
