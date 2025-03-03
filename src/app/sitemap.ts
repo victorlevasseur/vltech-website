@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `https://${CONFIG.domain}/skills`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 2,
+      priority: 0.7,
     },
   ];
 }
