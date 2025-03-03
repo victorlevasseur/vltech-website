@@ -1,0 +1,45 @@
+@use '@/styles/tokens/colors';
+@use '@/styles/tokens/font';
+
+.container {
+
+}
+
+.categoryList, .technologyList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category {
+  @include font.catchy();
+  font-size: 20px;
+  font-weight: 500;
+
+  margin: 24px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.categoryLabel {
+  border-left: 5px solid colors.secondary(500);
+  padding-left: 6px;
+}
+
+.technologyList {
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+.technology {
+  @include font.normal();
+
+  margin: 8px 0;
+  color: colors.neutral(700);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

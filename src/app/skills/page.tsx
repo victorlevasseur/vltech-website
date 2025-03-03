@@ -32,11 +32,11 @@ const SkillsPage: React.FC = () => {
             <p>Expertise en conception de <TK>microfrontends</TK>, avec notamment <TK>single-spa.js</TK></p>
             <p>
               Connaissances en <TK>analytics</TK> (Firebase, Google Analytics, Amplitude)
-              et en <TK internalName={'gtm'}>tag management/plan de taggage</TK> (GTM).
+              et en <TK technologyId={'gtm'}>tag management/plan de taggage</TK> (GTM).
             </p>
             <p>Expertise en implémentation de <TK>Design System</TK> (gestion de lib, Storybook, Chromatic).</p>
             <p>
-              Sensibilisé au problématiques d&apos;<TK>accessibilité</TK> et de <TK>SEO</TK>.
+              Sensibilisé au problématiques d&apos;<TK technologyId={'a11y'}>accessibilité</TK> et de <TK>SEO</TK>.
             </p>
           </InfoCard>
         </LayoutColumn>
@@ -65,13 +65,14 @@ const SkillsPage: React.FC = () => {
         <LayoutColumn small={12} medium={12} large={6}>
           <InfoCard title={'Infrastructure'} fullHeight>
             <p>
-              Expertise sur l&apos;utilisation du cloud <TK>AWS</TK> dont <TK>EC2</TK>, <TK>ECS</TK>, <TK>ALB</TK>, <TK>Autoscaling</TK>, <TK>
-              VPC</TK> (et Client VPN), <TK>RDS</TK>, <TK>DynamoDB</TK>, <TK>S3</TK>, <TK>CloudFront</TK>, <TK>
-              Lambda</TK>, <TK>EventBridge</TK>, <TK>SQS</TK>.
+              Expertise sur l&apos;utilisation du cloud <TK>AWS</TK> dont <TK>AWS EC2</TK>, <TK>AWS ECS</TK>, <TK>
+              AWS ALB</TK>, <TK>AWS Autoscaling</TK>, <TK>AWS VPC</TK> (et Client VPN), <TK>
+              AWS RDS</TK>, <TK>AWS DynamoDB</TK>, <TK>AWS S3</TK>, <TK>AWS CloudFront</TK>, <TK>
+              AWS Lambda</TK>, <TK>AWS EventBridge</TK>, <TK>AWS SQS</TK>.
             </p>
             <p>
               Expertise sur la gestion du cloud <TK>AWS</TK> avec des services comme <TK>
-              IAM</TK>, <TK>IAM Identity Center</TK>, <TK>Organization</TK>
+              AWS IAM</TK>, <TK>AWS IAM Identity Center</TK>, <TK>AWS Organization</TK>
             </p>
             <p>
               Expertise en CI/CD sur <TK>AWS CodePipeline</TK>, <TK>AWS CodeBuild</TK>, <TK>
