@@ -7,6 +7,7 @@ import {MenuBarPopupButton} from "@/components/menu-bar/menu-bar-popup-button";
 import {useCallback, useMemo, useState} from "react";
 import ReactModal from "react-modal";
 import {firaCode, firaSans} from "@/fonts";
+import Link from "next/link";
 
 export interface MenuBarItem {
   id: string;
@@ -53,7 +54,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
         containerClassName={styles.headerContainer}
         enableGrid={false}
       >
-        <div className={styles.logoContainer}>
+        <Link className={styles.logoContainer} href={'/'}>
           <Image
             quality={95}
             priority={true}
@@ -69,7 +70,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
             <br />
             Tech
           </span>
-        </div>
+        </Link>
         <div className={'hide-smaller-large ' + styles.linksContainer}>
           { allLinks }
         </div>
