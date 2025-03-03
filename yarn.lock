@@ -6585,6 +6585,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4.17.16":
+  version: 4.17.16
+  resolution: "@types/lodash@npm:4.17.16"
+  checksum: 10/9a8bb7471a7521bd65d528e1bd14f79819a3eeb6f8a35a8a44649a7d773775c0813e93fd93bd32ccf350bb076c0bf02c6d47877c4625f526f6dd4d283c746aec
+  languageName: node
+  linkType: hard
+
 "@types/mdx@npm:^2.0.0":
   version: 2.0.13
   resolution: "@types/mdx@npm:2.0.13"
@@ -17810,6 +17817,7 @@ __metadata:
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.2.0"
     "@types/jest": "npm:^29.5.14"
+    "@types/lodash": "npm:^4.17.16"
     "@types/node": "npm:^22.13.9"
     "@types/react": "npm:^19.0.10"
     "@types/react-dom": "npm:^19.0.4"
@@ -17824,6 +17832,7 @@ __metadata:
     eslint-plugin-storybook: "npm:^0.11.4"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
+    lodash: "npm:^4.17.21"
     modern-normalize: "npm:^3.0.1"
     next: "npm:15.2.1"
     open-next: "npm:^3.1.3"

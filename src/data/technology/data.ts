@@ -22,6 +22,11 @@ export const TECHNOLOGIES_CATEGORIES = {
     name: 'Infrastructure',
     priority: 3,
   },
+  Tools: {
+    id: 'Tools',
+    name: 'Outillage',
+    priority: 3.5
+  },
   Architecture: {
     id: 'Architecture',
     name: 'Architecture',
@@ -38,6 +43,7 @@ export const TECHNOLOGIES = {
   java: { id: 'java', name: 'Java', category: TECHNOLOGIES_CATEGORIES.Language },
   javascript: { id: 'javascript', name: 'Javascript', category: TECHNOLOGIES_CATEGORIES.Language },
   typescript: { id: 'typescript', name: 'Typescript', category: TECHNOLOGIES_CATEGORIES.Language },
+  sass: { id: 'sass', name: 'SASS', category: TECHNOLOGIES_CATEGORIES.Language },
 
   angular: { id: 'angular', name: 'Angular', category: TECHNOLOGIES_CATEGORIES.Frontend },
   react: { id: 'react', name: 'React', category: TECHNOLOGIES_CATEGORIES.Frontend },
@@ -87,8 +93,11 @@ export const TECHNOLOGIES = {
   'aws-codebuild': { id: 'aws-codebuild', name: 'AWS CodeBuild', category: TECHNOLOGIES_CATEGORIES.Infra, logoAssetName: 'aws' },
   'aws-cloudwatch': { id: 'aws-cloudwatch', name: 'AWS CloudWatch', category: TECHNOLOGIES_CATEGORIES.Infra, logoAssetName: 'aws' },
 
-  'gitlab-ci': { id: 'aws-gitlab-ci', name: 'GitLab CI', category: TECHNOLOGIES_CATEGORIES.Infra },
-  'github-actions': { id: 'aws-github-actions', name: 'GitHub Actions', category: TECHNOLOGIES_CATEGORIES.Infra },
+  'yarn': { id: 'yarn', name: 'Yarn', category: TECHNOLOGIES_CATEGORIES.Tools },
+  'prettier': { id: 'prettier', name: 'Prettier', category: TECHNOLOGIES_CATEGORIES.Tools },
+
+  'gitlab-ci': { id: 'aws-gitlab-ci', name: 'GitLab CI', category: TECHNOLOGIES_CATEGORIES.Infra, logoAssetName: 'gitlab' },
+  'github-actions': { id: 'aws-github-actions', name: 'GitHub Actions', category: TECHNOLOGIES_CATEGORIES.Infra, logoAssetName: 'github' },
   prometheus: { id: 'prometheus', name: 'Prometheus', category: TECHNOLOGIES_CATEGORIES.Infra },
   grafana: { id: 'grafana', name: 'Grafana', category: TECHNOLOGIES_CATEGORIES.Infra },
   'aws-cdk': { id: 'aws-cdk', name: 'AWS CDK', category: TECHNOLOGIES_CATEGORIES.Infra },

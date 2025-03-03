@@ -3,7 +3,7 @@ import {LayoutContainer} from "@/components/layout/layout-container";
 import {LayoutColumn} from "@/components/layout/layout-column";
 import {Page} from "@/components/layout/page";
 
-const ProjectPage: React.FC<{ searchParams: Promise<Record<string, string|string[]|undefined>> }> = async (props) => {
+const ProjectsPage: React.FC<{ searchParams: Promise<Record<string, string|string[]|undefined>> }> = async (props) => {
   const searchParams = await props.searchParams;
   const techKeyword = searchParams.tech;
 
@@ -26,4 +26,4 @@ const ProjectPage: React.FC<{ searchParams: Promise<Record<string, string|string
   )
 }
 
-export default ProjectPage;
+export default ProjectsPage;

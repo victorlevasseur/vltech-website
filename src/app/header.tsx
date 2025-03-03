@@ -12,6 +12,7 @@ export const Header: React.FC = () => {
       items={[
         { id: 'home', label: 'Accueil', href: '/', onlyRootPageActive: true },
         { id: 'skills', label: 'Compétences', href: '/skills' },
+        { id: 'projects', label: 'Projets', href: '/projects' },
       ]}
       currentPathname={pathname} />
   );
