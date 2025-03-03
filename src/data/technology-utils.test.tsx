@@ -1,4 +1,4 @@
-import {parseTechKeywordFilter} from "@/components/keywords/tech-keyword-utils";
+import {parseTechKeywordFilter} from "./technology-utils";
 
 const FakeComponent = () => (<></>);
 
