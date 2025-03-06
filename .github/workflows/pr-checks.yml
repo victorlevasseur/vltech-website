@@ -2,10 +2,16 @@ name: PR Checks
 run-name: PR Checks
 on:
   pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
 
 jobs:
   Unit-Tests:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v4
 
@@ -29,6 +35,7 @@ jobs:
 
   Storybook-Testing:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v4
 
@@ -54,6 +61,7 @@ jobs:
 
   Cypress-E2E-Testing:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     steps:
       - uses: actions/checkout@v4
 
@@ -75,6 +83,7 @@ jobs:
 
   Check-Deployment:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -123,3 +132,10 @@ jobs:
         with:
           title: 'Terraform Plan'
           log-file: terraform/terraform_plan_output.txt
+
+  NoDraftPullRequests:
+    if: github.event.pull_request.draft == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fails in order to indicate that pull request needs to be marked as ready to review and unit tests workflow needs to pass.
+        run: exit 1
