@@ -10356,8 +10356,8 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-storybook@npm:^0.11.3":
-  version: 0.11.3
-  resolution: "eslint-plugin-storybook@npm:0.11.3"
+  version: 0.11.4
+  resolution: "eslint-plugin-storybook@npm:0.11.4"
   dependencies:
     "@storybook/csf": "npm:^0.1.11"
     "@typescript-eslint/utils": "npm:^8.8.1"
@@ -10365,7 +10365,7 @@ __metadata:
   peerDependencies:
     eslint: ">=8"
     typescript: ">=4.8.4 <5.8.0"
-  checksum: 10/ac7ba93f00934564c5dbba5ac55bf1bede8cf72d97a8d48ac4bfb10daa1d0467aad708156f992ffeba08025550ae580b45c61a2e32d2d7c1d80cd3e24e053d10
+  checksum: 10/f0fbeef2686e399861db644fd3ffa2759ea50e99a84dc25cf43ff6dd12ac8d12d34b90722e56139a43b58f65a4ea69c36d6919c5224943998a902d2b1d5d13cc
   languageName: node
   linkType: hard
 
@@ -14976,6 +14976,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"playwright-core@npm:1.51.0":
+  version: 1.51.0
+  resolution: "playwright-core@npm:1.51.0"
+  bin:
+    playwright-core: cli.js
+  checksum: 10/2e2bb4e9625a7a08d305078d383200d9f3457fc4c51d3fac9443b94a0b820233ebe0dc0434f77da96a8ce278bc9806463194066dec942d1ac0de001d4b325bfb
+  languageName: node
+  linkType: hard
+
 "playwright@npm:^1.14.0":
   version: 1.50.1
   resolution: "playwright@npm:1.50.1"
@@ -14988,6 +14997,21 @@ __metadata:
   bin:
     playwright: cli.js
   checksum: 10/a3687614ac3238a81cbe3018e4f4a2ae92c71f3f65110cc6087068c020f6134f0628308da33177b9b08102644706e835d4053f6890beeb4a935f433bc4ac107a
+  languageName: node
+  linkType: hard
+
+"playwright@npm:^1.51.0":
+  version: 1.51.0
+  resolution: "playwright@npm:1.51.0"
+  dependencies:
+    fsevents: "npm:2.3.2"
+    playwright-core: "npm:1.51.0"
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    playwright: cli.js
+  checksum: 10/350f9e1cf8deff992f08d63aac88ed49aed1963d0b33a6f0a1354069734d028328acb3f156e25e57a78522bd3f42f687155ea3f39cb7fc4a83b15efce39b53f9
   languageName: node
   linkType: hard
 
@@ -17803,6 +17827,7 @@ __metadata:
     modern-normalize: "npm:^3.0.1"
     next: "npm:15.2.0"
     open-next: "npm:^3.1.3"
+    playwright: "npm:^1.51.0"
     postcss: "npm:^8.5.3"
     prettier: "npm:3.5.3"
     react: "npm:^19.0.0"
@@ -17814,6 +17839,7 @@ __metadata:
     storybook-addon-pseudo-states: "npm:^4.0.2"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.8.2"
+    webpack: "npm:^5.98.0"
   languageName: unknown
   linkType: soft
 
@@ -17954,7 +17980,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5":
+"webpack@npm:5, webpack@npm:^5.98.0":
   version: 5.98.0
   resolution: "webpack@npm:5.98.0"
   dependencies:
