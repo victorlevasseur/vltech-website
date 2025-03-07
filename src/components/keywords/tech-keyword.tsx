@@ -12,10 +12,10 @@ export interface TechKeywordProps {
   children?: React.ReactNode;
 }
 
-export const TechKeyword: React.FC<TechKeywordProps> = (props) => {
+export const TechKeyword: React.FC<TechKeywordProps> = async (props) => {
   const technologyId = parseTechKeywordFilter(props.children, props.technologyId);
 
-  if (isTechnologyWithProjects(technologyId)) {
+  if (await isTechnologyWithProjects(technologyId)) {
     return (
       <Link href={'/projects?tech=' + encodeURIComponent(technologyId)}>
         {props.children}
