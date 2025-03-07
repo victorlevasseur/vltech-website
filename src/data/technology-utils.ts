@@ -1,9 +1,9 @@
-import React, {Children} from "react";
-import lodash from "lodash";
-
-import {PROJECTS} from "@/data/projects/data";
-import {Technology} from "@/data/technology/technology";
-import {TECHNOLOGIES, TECHNOLOGIES_CATEGORIES} from "@/data/technology/data";
+import React, { Children } from 'react';
+import lodash from 'lodash';
+import { Technology } from '@/data/technology/technology';
+import { TECHNOLOGIES, TECHNOLOGIES_CATEGORIES } from '@/data/technology/data';
+import { MDXContent } from 'mdx/types';
+import { Project } from '@/data/projects/project';
 
 export const parseTechKeywordFilter = (children?: React.ReactNode, override?: string) => {
   const childrenArray = Children.toArray(children);
@@ -23,20 +23,12 @@ export const parseTechKeywordFilter = (children?: React.ReactNode, override?: st
   return technologyId;
 }
 
-export const hasProject = (projectId: string): projectId is keyof typeof PROJECTS => {
-  return projectId in PROJECTS;
-}
-
 export const hasTechnology = (technologyId: string): technologyId is keyof typeof TECHNOLOGIES => {
   return technologyId in TECHNOLOGIES;
 }
 
 export const isTechnologyWithProjects = (technologyId: string): boolean => {
-  return hasTechnology(technologyId) &&
-    !!Object.values(PROJECTS)
-      .find((project) => project.technologies
-        .map((technology) => technology.id)
-        .indexOf(technologyId) !== -1)
+  return hasTechnology(technologyId); // FIXME: reimplement project search from tech with MDX.
 }
 
 export const groupAndSortTechnologies = (technologies: Technology[]) => {
@@ -53,3 +45,36 @@ export const groupAndSortTechnologies = (technologies: Technology[]) => {
       categoryA.category.priority - categoryB.category.priority)
     .value();
 }
+
+interface ProjectMDX {
+  default: MDXContent;
+  frontmatter: {
+    name: string;
+    summary: string;
+    technologies: string[];
+  }
+}
+
+export const parseProjectMdx =
+  (projectId: string, projectMdx: ProjectMDX): Project => {
+  if (!projectMdx.frontmatter?.name) {
+    throw Error('Project name is missing!');
+  }
+  if (!projectMdx.frontmatter?.summary) {
+    throw Error('Project summary is missing!');
+  }
+  if (!projectMdx.frontmatter?.technologies) {
+    throw Error('Project technologies are missing!');
+  }
+
+  return {
+    id: projectId,
+    name: projectMdx.frontmatter.name,
+    summary: projectMdx.frontmatter.summary,
+    content: projectMdx.default,
+    technologies: projectMdx.frontmatter.technologies
+      .filter(hasTechnology)
+      .map((technologyId) => TECHNOLOGIES[technologyId])
+  }
+}
+

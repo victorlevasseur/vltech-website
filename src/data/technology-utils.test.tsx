@@ -1,6 +1,5 @@
 import {
   groupAndSortTechnologies,
-  hasProject,
   hasTechnology,
   isTechnologyWithProjects,
   parseTechKeywordFilter
@@ -8,7 +7,6 @@ import {
 import {Technology} from "@/data/technology/technology";
 import {TECHNOLOGIES_CATEGORIES} from "@/data/technology/data";
 
-jest.mock('./projects/data');
 jest.mock('./technology/data');
 
 const FakeComponent = () => (<></>);
@@ -58,16 +56,6 @@ describe('hasTechnology', () => {
 
   test('should return false if the technology does not exist', () => {
     expect(hasTechnology('futureHypeTech')).toEqual(false);
-  });
-});
-
-describe('hasProject', () => {
-  test('should return true if the project exists', () => {
-    expect(hasProject('projectA')).toEqual(true);
-  });
-
-  test('should return false if the project does not exist', () => {
-    expect(hasTechnology('projectY')).toEqual(false);
   });
 });
 
