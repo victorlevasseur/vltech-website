@@ -1,5 +1,5 @@
-import React from "react";
-import {Technology} from "@/data/technology/technology";
+import { Technology } from '@/data/technology/technology';
+import { MDXContent } from 'mdx/types';
 
 export interface Project {
   id: string;
@@ -7,10 +7,7 @@ export interface Project {
   name: string;
   summary: string;
 
-  /**
-   * Full description of the project, as a markdown string or a fully custom React component.
-   */
-  content: string | React.ComponentType;
+  content: MDXContent;
 
   technologies: Technology[];
 }

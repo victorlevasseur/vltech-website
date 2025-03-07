@@ -1,0 +1,51 @@
+---
+name: Microservice IAM (Glady)
+summary: Développement d'une solution de gestion de rôles et de droits pour l'architecture microservice de Glady.
+technologies:
+ - java
+ - spring-boot
+ - postgresql
+ - hibernate
+ - grpc
+ - sql
+ - aws
+ - aws-ecs
+ - aws-eventbridge
+ - aws-rds
+ - aws-sqs
+---
+En tant que Tech Lead, j'ai développé, avec mon équipe composées de 2 développeur,
+un micro-service pour gérer les habilitations de tous les utilisateurs de la plateforme
+Glady.
+
+# Fonctionnalités
+
+Le micro-service gère l'ensemble des habilitations de tous les utilisateurs de la plateforme Glady.
+Le système utilise un découpage en rôles et en droits et il stocke les associations de rôles
+aux utilisateurs ainsi que les associations des utilisateurs aux organismes inscrits chez Glady.
+
+Il permet également de distinguer les rôles et droits par organismes liés à l'utilisateur étant
+donné que c'est un besoin récurrent pour la plateforme Glady.
+
+# Technologies
+
+Le micro-service utilise une base de données PostgreSQL et est réalisé à l'aide de Spring Boot.
+Son API est exposée uniquement en interne en gRPC.
+
+Il émet différents événements dans AWS EventBridge pour permettre à d'autres micro-services d'être
+tenus au courant d'évolutions dans les associations entre les utilisateurs et les organismes ainsi
+que l'évolution des rôles des utilisateurs.
+
+Le tout est surveillé par des métriques AWS CloudWatch et Prometheus avec des visualisations
+et alertes configurées dans Grafana pour détecter les anomalies.
+
+# Exploitation par les autres équipes
+
+Grâce à un système de configuration basé sur Git, il permet à toutes les équipes de Glady d'y configurer
+les droits et rôles associés à leurs services/produits. Cela permet une livraison continues de
+cette configuration.
+
+# Performances
+
+Lors des pics d'utilisation de la plateforme Glady au Black Friday et à Noël 2024, le service répondait
+à plus de 10 000 requêtes/secondes tout en enregistrant un temps de réponse médian de 15ms.

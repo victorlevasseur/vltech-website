@@ -1,9 +1,27 @@
-import React, {Children} from "react";
-import lodash from "lodash";
+import React, { Children } from 'react';
+import fs from 'node:fs/promises';
+import lodash from 'lodash';
+import { Technology } from '@/data/technology/technology';
+import { TECHNOLOGIES, TECHNOLOGIES_CATEGORIES } from '@/data/technology/data';
+import { MDXContent } from 'mdx/types';
+import { Project } from '@/data/projects/project';
 
-import {PROJECTS} from "@/data/projects/data";
-import {Technology} from "@/data/technology/technology";
-import {TECHNOLOGIES, TECHNOLOGIES_CATEGORIES} from "@/data/technology/data";
+export const PROJECTS_FOLDER = 'data/projects/contents/';
+
+export interface ProjectMDX {
+  default: MDXContent;
+  frontmatter: {
+    name: string;
+    summary: string;
+    technologies: string[];
+  }
+}
+
+/**
+ * Stores a list of technologies ids with at least one project.
+ * Populated and used by isTechnologyWithProjects.
+ */
+let technologiesWithProjects: Set<string>|undefined = undefined;
 
 export const parseTechKeywordFilter = (children?: React.ReactNode, override?: string) => {
   const childrenArray = Children.toArray(children);
@@ -23,20 +41,32 @@ export const parseTechKeywordFilter = (children?: React.ReactNode, override?: st
   return technologyId;
 }
 
-export const hasProject = (projectId: string): projectId is keyof typeof PROJECTS => {
-  return projectId in PROJECTS;
-}
-
 export const hasTechnology = (technologyId: string): technologyId is keyof typeof TECHNOLOGIES => {
   return technologyId in TECHNOLOGIES;
 }
 
-export const isTechnologyWithProjects = (technologyId: string): boolean => {
-  return hasTechnology(technologyId) &&
-    !!Object.values(PROJECTS)
-      .find((project) => project.technologies
+export const isTechnologyWithProjects = async (technologyId: string): Promise<boolean> => {
+  if (!technologiesWithProjects) {
+    const allSeenTechnologies = new Set<string>();
+
+    const projectsMdxPaths = await fs.readdir(process.cwd() + '/src/' + PROJECTS_FOLDER);
+    const projectsMdx: Promise<ProjectMDX>[] = projectsMdxPaths
+      .map((path) => import('@/' + PROJECTS_FOLDER + path));
+
+    for await (const projectMdx of projectsMdx) {
+      const project = parseProjectMdx('dontcare', projectMdx);
+      project.technologies
         .map((technology) => technology.id)
-        .indexOf(technologyId) !== -1)
+        .forEach((technologyId) => {
+          allSeenTechnologies.add(technologyId)
+        });
+    }
+
+    technologiesWithProjects = allSeenTechnologies;
+  }
+
+  return hasTechnology(technologyId) &&
+    technologiesWithProjects.has(technologyId);
 }
 
 export const groupAndSortTechnologies = (technologies: Technology[]) => {
@@ -53,3 +83,27 @@ export const groupAndSortTechnologies = (technologies: Technology[]) => {
       categoryA.category.priority - categoryB.category.priority)
     .value();
 }
+
+export const parseProjectMdx =
+  (projectId: string, projectMdx: ProjectMDX): Project => {
+  if (!projectMdx.frontmatter?.name) {
+    throw Error('Project name is missing!');
+  }
+  if (!projectMdx.frontmatter?.summary) {
+    throw Error('Project summary is missing!');
+  }
+  if (!projectMdx.frontmatter?.technologies) {
+    throw Error('Project technologies are missing!');
+  }
+
+  return {
+    id: projectId,
+    name: projectMdx.frontmatter.name,
+    summary: projectMdx.frontmatter.summary,
+    content: projectMdx.default,
+    technologies: projectMdx.frontmatter.technologies
+      .filter(hasTechnology)
+      .map((technologyId) => TECHNOLOGIES[technologyId])
+  }
+}
+
