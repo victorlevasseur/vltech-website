@@ -10355,7 +10355,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-storybook@npm:^0.11.3":
+"eslint-plugin-storybook@npm:^0.11.4":
   version: 0.11.4
   resolution: "eslint-plugin-storybook@npm:0.11.4"
   dependencies:
@@ -17821,7 +17821,7 @@ __metadata:
     eslint: "npm:^9.21.0"
     eslint-config-next: "npm:15.2.1"
     eslint-config-prettier: "npm:^10.1.1"
-    eslint-plugin-storybook: "npm:^0.11.3"
+    eslint-plugin-storybook: "npm:^0.11.4"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     modern-normalize: "npm:^3.0.1"
