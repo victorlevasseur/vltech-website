@@ -51,7 +51,7 @@ export const isTechnologyWithProjects = async (technologyId: string): Promise<bo
 
     const projectsMdxPaths = await fs.readdir(process.cwd() + '/src/' + PROJECTS_FOLDER);
     const projectsMdx: Promise<ProjectMDX>[] = projectsMdxPaths
-      .map((path) => import('@/' + PROJECTS_FOLDER + path));
+      .map((path) => import('@/data/projects/contents/' + path));
 
     for await (const projectMdx of projectsMdx) {
       const project = parseProjectMdx('dontcare', projectMdx);
