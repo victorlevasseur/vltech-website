@@ -19,12 +19,13 @@ describe('parseTechKeywordFilter', () => {
   });
 
   test('should return only the string children concatenated if no override', () => {
-    // eslint-disable-next-line react/jsx-key
     expect(
+      // eslint-disable-next-line react/jsx-key
       parseTechKeywordFilter(['foobaz', <FakeComponent />], undefined)
     ).toEqual('foobaz');
-    // eslint-disable-next-line react/jsx-key
+
     expect(
+      // eslint-disable-next-line react/jsx-key
       parseTechKeywordFilter(['foo', <FakeComponent />, 'baz'], undefined)
     ).toEqual('foobaz');
   });
@@ -37,8 +38,9 @@ describe('parseTechKeywordFilter', () => {
 
   test('should throw if no string children are found and no override is provided', () => {
     expect(() => parseTechKeywordFilter([], undefined)).toThrow();
-    // eslint-disable-next-line react/jsx-key
+
     expect(() =>
+      // eslint-disable-next-line react/jsx-key
       parseTechKeywordFilter([<FakeComponent />], undefined)
     ).toThrow();
   });
