@@ -71,6 +71,16 @@ export const TECHNOLOGIES = {
     name: 'React',
     category: TECHNOLOGIES_CATEGORIES.Frontend,
   },
+  redux: {
+    id: 'redux',
+    name: 'Redux',
+    category: TECHNOLOGIES_CATEGORIES.Frontend,
+  },
+  'service-workers': {
+    id: 'service-workers',
+    name: 'Service Workers',
+    category: TECHNOLOGIES_CATEGORIES.Frontend,
+  },
   'react-native': {
     id: 'react-native',
     name: 'React Native',
@@ -294,13 +304,13 @@ export const TECHNOLOGIES = {
   },
 
   'gitlab-ci': {
-    id: 'aws-gitlab-ci',
+    id: 'gitlab-ci',
     name: 'GitLab CI',
     category: TECHNOLOGIES_CATEGORIES.Infra,
     logoAssetName: 'gitlab',
   },
   'github-actions': {
-    id: 'aws-github-actions',
+    id: 'github-actions',
     name: 'GitHub Actions',
     category: TECHNOLOGIES_CATEGORIES.Infra,
     logoAssetName: 'github',
@@ -341,6 +351,11 @@ export const TECHNOLOGIES = {
     category: TECHNOLOGIES_CATEGORIES.Infra,
   },
 
+  oidc: {
+    id: 'oidc',
+    name: 'OpenID Connect',
+    category: TECHNOLOGIES_CATEGORIES.Architecture,
+  },
   'micro-services-archi': {
     id: 'micro-services-archi',
     name: 'Architecture micro-services',

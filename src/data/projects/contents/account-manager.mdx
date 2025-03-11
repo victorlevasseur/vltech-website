@@ -1,0 +1,56 @@
+---
+name: Account Manager
+summary: Un outil de suivi de compte bancaire pour gérer son budget.
+technologies:
+  - typescript
+  - react
+  - redux
+  - sass
+  - oidc
+  - aws
+  - aws-lambda
+  - aws-cloudfront
+  - aws-s3
+  - aws-codepipeline
+  - service-workers
+priority: 1
+---
+
+# Conception
+
+L'application est une application React standard (non basée sur un framework).
+
+## Authentification
+
+Elle exploite les API d'authentification et Google Drive de Google
+pour stocker les configurations et les fichiers créés par l'utilisateur.
+
+## Gestion d'état
+
+L'application exploite Redux et les Thunk pour la gestion des états et les requêtes
+asynchrones. Cela permet également de proposer facilement d'annuler/refaire des actions réalisées.
+Le tout est facilité par l'utilisation de Redux Toolkit pour être au top des meilleures
+pratiques et optimisations Redux.
+
+## UI
+
+L'interface est réalisée à l'aide de Material UI, assisté par quelques autres libraries pour
+le drag'n'drop.
+
+## Calcul en arrière-plan
+
+Certaines tâches lourdes pour être exécutées de façon synchrones sont déléguées à des service
+workers.
+
+## Exports et génération de PDF
+
+L'application permet de générer des exports sous le format PDF. Une Lambda AWS prend en charge
+cela via un endpoint qui retourne le fichier s'il est demandé.
+
+# Liens
+
+-> [GitHub](https://github.com/victorlevasseur/account-manager)
+
+-> [Accéder à l'application](https://account-manager.victorlevasseur.com)
+
+_un compte Google est requis (pour le stockage des fichiers et des configuration propres à votre utilisation de l'outil)_
