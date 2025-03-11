@@ -1,4 +1,4 @@
-import {TechnologyCategory} from "@/data/technology/technology-category";
+import { TechnologyCategory } from '@/data/technology/technology-category';
 
 export interface Technology {
   id: string;

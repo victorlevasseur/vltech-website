@@ -1,6 +1,6 @@
-import {getStoryContext, TestRunnerConfig} from '@storybook/test-runner';
-import {checkA11y, injectAxe} from 'axe-playwright';
-import {VIEWPORTS} from "./viewports";
+import { getStoryContext, TestRunnerConfig } from '@storybook/test-runner';
+import { checkA11y, injectAxe } from 'axe-playwright';
+import { VIEWPORTS } from './viewports';
 
 const DEFAULT_VIEWPORT_SIZE = { width: 1200, height: 900 };
 
@@ -14,7 +14,9 @@ const config: TestRunnerConfig = {
     const viewportParameter = VIEWPORTS[viewportName];
 
     if (viewportParameter) {
-      const viewportSize = Object.entries(viewportParameter.styles ?? {}).reduce(
+      const viewportSize = Object.entries(
+        viewportParameter.styles ?? {}
+      ).reduce(
         (acc, [screen, size]) => ({
           ...acc,
           // make sure your viewport config in Storybook only uses numbers, not percentages
@@ -31,12 +33,17 @@ const config: TestRunnerConfig = {
     await injectAxe(page);
   },
   async postVisit(page) {
-    await checkA11y(page, 'body', {
-      detailedReport: true,
-      detailedReportOptions: {
-        html: true,
+    await checkA11y(
+      page,
+      'body',
+      {
+        detailedReport: true,
+        detailedReportOptions: {
+          html: true,
+        },
       },
-    }, true);
+      true
+    );
   },
 };
 

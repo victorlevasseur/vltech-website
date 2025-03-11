@@ -5,7 +5,7 @@ import { LinkButton } from '@/components/button/link-button';
 import { CONFIG } from '@/config';
 
 import styles from './page.module.scss';
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -19,14 +19,20 @@ export default function Home() {
             </p>
           </hgroup>
         </LayoutColumn>
-        <LayoutColumn small={12} medium={5} large={4} className={styles.myselfPictureColumn}>
+        <LayoutColumn
+          small={12}
+          medium={5}
+          large={4}
+          className={styles.myselfPictureColumn}
+        >
           <Image
             className={styles.myselfPicture}
             src={'/assets/me.png'}
             alt={'Victor Levasseur'}
             fill
             objectFit={'contain'}
-            sizes={'(max-width: 575px), 100vw, 33vw'}/>
+            sizes={'(max-width: 575px), 100vw, 33vw'}
+          />
         </LayoutColumn>
         <LayoutColumn small={12} medium={7} large={8}>
           <p>

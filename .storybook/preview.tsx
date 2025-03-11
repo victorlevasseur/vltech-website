@@ -1,14 +1,12 @@
-import type {Preview} from '@storybook/react';
+import type { Preview } from '@storybook/react';
 
-import {StoryDecorator} from "./story-decorator";
-import {VIEWPORTS} from "./viewports";
+import { StoryDecorator } from './story-decorator';
+import { VIEWPORTS } from './viewports';
 
 import '../src/styles/globals/globals.scss';
 
 const preview: Preview = {
-  decorators: [
-    StoryDecorator
-  ],
+  decorators: [StoryDecorator],
   parameters: {
     controls: {
       matchers: {
@@ -19,9 +17,9 @@ const preview: Preview = {
     layout: 'fullscreen',
     viewport: {
       viewports: {
-        ...VIEWPORTS
-      }
-    }
+        ...VIEWPORTS,
+      },
+    },
   },
 };
 

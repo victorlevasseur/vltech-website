@@ -1,5 +1,5 @@
-import {TechnologyCategory} from "@/data/technology/technology-category";
-import {Technology} from "@/data/technology/technology";
+import { TechnologyCategory } from '@/data/technology/technology-category';
+import { Technology } from '@/data/technology/technology';
 
 export const TECHNOLOGIES_CATEGORIES = {
   CategoryA: {
@@ -17,11 +17,27 @@ export const TECHNOLOGIES_CATEGORIES = {
     name: 'Category C',
     priority: 2,
   },
-} satisfies {[technologiesCategoryId: string]: TechnologyCategory}
+} satisfies { [technologiesCategoryId: string]: TechnologyCategory };
 
 export const TECHNOLOGIES = {
-  victorscript: { id: 'victorscript', name: 'VictorScript', category: TECHNOLOGIES_CATEGORIES.CategoryB },
-  arthurscript: { id: 'arthurscript', name: 'ArthurScript', category: TECHNOLOGIES_CATEGORIES.CategoryB },
-  totorCloud: { id: 'totorCloud', name: 'Totor Cloud', category: TECHNOLOGIES_CATEGORIES.CategoryA },
-  chaumontProcessor: { id: 'chaumontProcessor', name: 'Chaumont Processor', category: TECHNOLOGIES_CATEGORIES.CategoryC },
+  victorscript: {
+    id: 'victorscript',
+    name: 'VictorScript',
+    category: TECHNOLOGIES_CATEGORIES.CategoryB,
+  },
+  arthurscript: {
+    id: 'arthurscript',
+    name: 'ArthurScript',
+    category: TECHNOLOGIES_CATEGORIES.CategoryB,
+  },
+  totorCloud: {
+    id: 'totorCloud',
+    name: 'Totor Cloud',
+    category: TECHNOLOGIES_CATEGORIES.CategoryA,
+  },
+  chaumontProcessor: {
+    id: 'chaumontProcessor',
+    name: 'Chaumont Processor',
+    category: TECHNOLOGIES_CATEGORIES.CategoryC,
+  },
 } satisfies { [technologyId: string]: Technology };

@@ -9,8 +9,8 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   options: {
     // @ts-expect-error because plugins must be transmitted as strings for Turbo.
-    remarkPlugins: [['remark-frontmatter'], ['remark-mdx-frontmatter']]
-  }
+    remarkPlugins: [['remark-frontmatter'], ['remark-mdx-frontmatter']],
+  },
 });
 
 export default withMDX(nextConfig);

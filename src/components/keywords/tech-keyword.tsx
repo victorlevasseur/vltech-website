@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
-import Link from "next/link";
-import {isTechnologyWithProjects} from "@/common/technologies.actions";
+import Link from 'next/link';
+import { isTechnologyWithProjects } from '@/common/technologies.actions';
 
 export interface TechKeywordProps {
   /**
@@ -12,10 +12,13 @@ export interface TechKeywordProps {
   children?: React.ReactNode;
 }
 
-export const parseTechKeywordFilter = (children?: React.ReactNode, override?: string) => {
+export const parseTechKeywordFilter = (
+  children?: React.ReactNode,
+  override?: string
+) => {
   const childrenArray = Children.toArray(children);
   const computedTechnologyId = childrenArray
-    .filter((child) => typeof child === "string")
+    .filter((child) => typeof child === 'string')
     .reduce((text, part) => text + part, '');
 
   const technologyId = (override ?? computedTechnologyId)
@@ -24,14 +27,19 @@ export const parseTechKeywordFilter = (children?: React.ReactNode, override?: st
     .replaceAll('.', '');
 
   if (!technologyId) {
-    throw Error('Unable to compute TechKeyword technology id, please provide one manually as a prop.');
+    throw Error(
+      'Unable to compute TechKeyword technology id, please provide one manually as a prop.'
+    );
   }
 
   return technologyId;
-}
+};
 
 export const TechKeyword: React.FC<TechKeywordProps> = async (props) => {
-  const technologyId = parseTechKeywordFilter(props.children, props.technologyId);
+  const technologyId = parseTechKeywordFilter(
+    props.children,
+    props.technologyId
+  );
 
   if (await isTechnologyWithProjects(technologyId)) {
     return (
@@ -40,8 +48,6 @@ export const TechKeyword: React.FC<TechKeywordProps> = async (props) => {
       </Link>
     );
   } else {
-    return (
-      <em>{props.children}</em>
-    );
+    return <em>{props.children}</em>;
   }
-}
+};

@@ -15,22 +15,22 @@ describe('groupAndSortTechnologies', () => {
   const techA: Technology = {
     id: 'techA',
     name: 'Z Tech A',
-    category: catA
+    category: catA,
   };
   const techB: Technology = {
     id: 'techB',
     name: 'Tech B',
-    category: catC
+    category: catC,
   };
   const techC: Technology = {
     id: 'techB',
     name: 'Tech B',
-    category: catA
+    category: catA,
   };
   const techD: Technology = {
     id: 'techD',
     name: 'Tech D',
-    category: catB
+    category: catB,
   };
 
   test('should return an empty array if an empty array is provided', () => {
@@ -38,41 +38,32 @@ describe('groupAndSortTechnologies', () => {
   });
 
   test('should properly group by tech categories and order them', () => {
-    expect(groupAndSortTechnologies([
-      techA,
-      techB,
-      techC,
-      techD
-    ])).toEqual([
+    expect(groupAndSortTechnologies([techA, techB, techC, techD])).toEqual([
       {
         category: catB,
-        technologies: [techD]
+        technologies: [techD],
       },
       {
         category: catA,
-        technologies: [techC, techA]
+        technologies: [techC, techA],
       },
       {
         category: catC,
-        technologies: [techB]
-      }
-    ])
+        technologies: [techB],
+      },
+    ]);
   });
 
   test('should not return categories with empty technologies array', () => {
-    expect(groupAndSortTechnologies([
-      techA,
-      techC,
-      techD
-    ])).toEqual([
+    expect(groupAndSortTechnologies([techA, techC, techD])).toEqual([
       {
         category: catB,
-        technologies: [techD]
+        technologies: [techD],
       },
       {
         category: catA,
-        technologies: [techC, techA]
-      }
-    ])
+        technologies: [techC, techA],
+      },
+    ]);
   });
 });

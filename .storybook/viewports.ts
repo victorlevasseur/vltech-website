@@ -1,4 +1,4 @@
-import {Viewport, ViewportMap} from "@storybook/addon-viewport";
+import { Viewport, ViewportMap } from '@storybook/addon-viewport';
 
 export const ALL_VIEWPORTS: Viewport[] = [
   {
@@ -7,7 +7,7 @@ export const ALL_VIEWPORTS: Viewport[] = [
     styles: {
       width: '420px',
       height: '750px',
-    }
+    },
   },
   {
     name: 'small',
@@ -15,7 +15,7 @@ export const ALL_VIEWPORTS: Viewport[] = [
     styles: {
       width: '576px',
       height: '800px',
-    }
+    },
   },
   {
     name: 'medium',
@@ -23,7 +23,7 @@ export const ALL_VIEWPORTS: Viewport[] = [
     styles: {
       width: '768px',
       height: '1024px',
-    }
+    },
   },
   {
     name: 'large',
@@ -31,7 +31,7 @@ export const ALL_VIEWPORTS: Viewport[] = [
     styles: {
       width: '992px',
       height: '800px',
-    }
+    },
   },
   {
     name: 'xlarge',
@@ -39,7 +39,7 @@ export const ALL_VIEWPORTS: Viewport[] = [
     styles: {
       width: '1200px',
       height: '900px',
-    }
+    },
   },
   {
     name: 'xxlarge',
@@ -47,12 +47,10 @@ export const ALL_VIEWPORTS: Viewport[] = [
     styles: {
       width: '1440px',
       height: '900px',
-    }
-  }
-]
+    },
+  },
+];
 
-export const VIEWPORTS: ViewportMap = ALL_VIEWPORTS
-  .map((viewport) => ({
-    [viewport.name]: viewport
-  }))
-  .reduce((acc, viewport) => ({...acc, ...viewport}), {})
+export const VIEWPORTS: ViewportMap = ALL_VIEWPORTS.map((viewport) => ({
+  [viewport.name]: viewport,
+})).reduce((acc, viewport) => ({ ...acc, ...viewport }), {});

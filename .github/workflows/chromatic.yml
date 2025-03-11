@@ -1,4 +1,4 @@
-name: "Chromatic"
+name: 'Chromatic'
 
 on: push
 
@@ -28,4 +28,4 @@ jobs:
           # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           onlyChanged: true
-          skip: "@(renovate/**|dependabot/**)"
+          skip: '@(renovate/**|dependabot/**)'

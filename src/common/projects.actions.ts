@@ -1,4 +1,4 @@
-'use server'
+'use server';
 
 import { Project } from '@/data/projects/project';
 import { TECHNOLOGIES } from '@/data/technology/data';
@@ -7,21 +7,25 @@ import { ProjectMDX } from '@/data/projects/project-mdx';
 import { listFilesInFolder } from '@/common/fs.actions';
 
 export async function readProject(projectId: string): Promise<Project> {
-  'use server'
-  const projectMdx: ProjectMDX = await import('@/data/projects/contents/' + projectId + '.mdx');
+  'use server';
+  const projectMdx: ProjectMDX = await import(
+    '@/data/projects/contents/' + projectId + '.mdx'
+  );
   return parseProjectMdx(projectId, projectMdx);
 }
 
 export async function listProjectIds(): Promise<string[]> {
-  'use server'
+  'use server';
   return await listFilesInFolder('src/data/projects/contents', 'mdx');
 }
 
 export async function listProjects(): Promise<Project[]> {
-  'use server'
+  'use server';
   const projectIds = await listProjectIds();
 
-  return await Promise.all(projectIds.map((projectId) => readProject(projectId)));
+  return await Promise.all(
+    projectIds.map((projectId) => readProject(projectId))
+  );
 }
 
 function parseProjectMdx(projectId: string, projectMdx: ProjectMDX): Project {
@@ -42,6 +46,6 @@ function parseProjectMdx(projectId: string, projectMdx: ProjectMDX): Project {
     content: projectMdx.default,
     technologies: projectMdx.frontmatter.technologies
       .filter(hasTechnology)
-      .map((technologyId) => TECHNOLOGIES[technologyId])
-  }
+      .map((technologyId) => TECHNOLOGIES[technologyId]),
+  };
 }

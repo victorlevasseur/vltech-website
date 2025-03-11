@@ -1,5 +1,5 @@
-import {Preview} from "@storybook/react";
-import {firaCode, firaSans} from "../src/fonts";
+import { Preview } from '@storybook/react';
+import { firaCode, firaSans } from '../src/fonts';
 
 type Decorator = Extract<Preview['decorators'], object[]>[0];
 
@@ -11,8 +11,7 @@ export const StoryDecorator: Decorator = (Story, context) => {
   // disable the padding.
   if (context.parameters.withMargins === false) {
     return (
-      <main
-        className={`${firaSans.variable} ${firaCode.variable}`}>
+      <main className={`${firaSans.variable} ${firaCode.variable}`}>
         <Story />
       </main>
     );
@@ -20,9 +19,10 @@ export const StoryDecorator: Decorator = (Story, context) => {
     return (
       <main
         className={`${firaSans.variable} ${firaCode.variable}`}
-        style={{ padding: '16px' }}>
+        style={{ padding: '16px' }}
+      >
         <Story />
       </main>
     );
   }
-}
+};
