@@ -1,3 +1,4 @@
+import { expect } from '@jest/globals';
 import { listFilesInFolder } from '@/common/fs.actions';
 
 jest.mock('node:fs/promises', () => ({

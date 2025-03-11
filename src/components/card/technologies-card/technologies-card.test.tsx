@@ -1,3 +1,4 @@
+import { expect } from '@jest/globals';
 import { TECHNOLOGIES_CATEGORIES } from '@/data/technology/data';
 import { Technology } from '@/data/technology/technology';
 import { groupAndSortTechnologies } from '@/components/card/technologies-card/technologies-card';
