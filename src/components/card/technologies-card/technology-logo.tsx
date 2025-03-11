@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import React, {useState} from "react";
-import {Technology} from "@/data/technology/technology";
-import Image from "next/image";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faCube} from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { Technology } from '@/data/technology/technology';
+import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCube } from '@fortawesome/free-solid-svg-icons';
 
 export interface TechnologyLogoProps {
   technology: Technology;
@@ -14,9 +14,12 @@ export interface TechnologyLogoProps {
 
 export const TechnologyLogo: React.FC<TechnologyLogoProps> = (props) => {
   const logoAssetName =
-    '/assets/technologies/' + (props.technology.logoAssetName ?? props.technology.id) + '.png';
+    '/assets/technologies/' +
+    (props.technology.logoAssetName ?? props.technology.id) +
+    '.png';
 
-  const [logoAssetNameCurrent, setLogoAssetNameCurrent] = useState(logoAssetName);
+  const [logoAssetNameCurrent, setLogoAssetNameCurrent] =
+    useState(logoAssetName);
   const [isErrored, setIsErrored] = React.useState(false);
 
   if (logoAssetName !== logoAssetNameCurrent) {
@@ -25,9 +28,7 @@ export const TechnologyLogo: React.FC<TechnologyLogoProps> = (props) => {
   }
 
   if (isErrored) {
-    return (
-      <FontAwesomeIcon icon={faCube} height={24} width={24} />
-    )
+    return <FontAwesomeIcon icon={faCube} height={24} width={24} />;
   } else {
     return (
       <Image
@@ -38,7 +39,8 @@ export const TechnologyLogo: React.FC<TechnologyLogoProps> = (props) => {
         onError={() => setIsErrored(true)}
         objectFit={'contain'}
         alt={props.technology.name + ' logo'}
-        aria-hidden={true}/>
+        aria-hidden={true}
+      />
     );
   }
-}
+};

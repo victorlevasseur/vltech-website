@@ -1,8 +1,8 @@
 'use client';
 
-import React from "react";
+import React from 'react';
 import { usePathname } from 'next/navigation';
-import { MenuBar } from "@/components/menu-bar/menu-bar";
+import { MenuBar } from '@/components/menu-bar/menu-bar';
 
 export const Header: React.FC = () => {
   const pathname = usePathname();
@@ -14,6 +14,7 @@ export const Header: React.FC = () => {
         { id: 'skills', label: 'Compétences', href: '/skills' },
         { id: 'projects', label: 'Projets', href: '/projects' },
       ]}
-      currentPathname={pathname} />
+      currentPathname={pathname}
+    />
   );
 };

@@ -1,20 +1,20 @@
-import {LayoutContainer} from "@/components/layout/layout-container";
-import Image from "next/image";
-import MenuBarLink from "@/components/menu-bar/menu-bar-link";
+import { LayoutContainer } from '@/components/layout/layout-container';
+import Image from 'next/image';
+import MenuBarLink from '@/components/menu-bar/menu-bar-link';
 
 import styles from './menu-bar.module.scss';
-import {MenuBarPopupButton} from "@/components/menu-bar/menu-bar-popup-button";
-import {useCallback, useMemo, useState} from "react";
-import ReactModal from "react-modal";
-import {firaCode, firaSans} from "@/fonts";
-import Link from "next/link";
+import { MenuBarPopupButton } from '@/components/menu-bar/menu-bar-popup-button';
+import { useCallback, useMemo, useState } from 'react';
+import ReactModal from 'react-modal';
+import { firaCode, firaSans } from '@/fonts';
+import Link from 'next/link';
 
 export interface MenuBarItem {
   id: string;
   href: string;
   label: string;
 
-  onlyRootPageActive?: boolean
+  onlyRootPageActive?: boolean;
 }
 
 export interface MenuBarProps {
@@ -22,10 +22,12 @@ export interface MenuBarProps {
   currentPathname?: string;
 }
 
-export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
-  const currentActiveItem = items.find((item) => item.onlyRootPageActive ?
-    item.href === currentPathname :
-    (currentPathname?.startsWith(item.href) ?? false));
+export const MenuBar: React.FC<MenuBarProps> = ({ items, currentPathname }) => {
+  const currentActiveItem = items.find((item) =>
+    item.onlyRootPageActive
+      ? item.href === currentPathname
+      : (currentPathname?.startsWith(item.href) ?? false)
+  );
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -44,9 +46,10 @@ export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
         label={item.label}
         href={item.href}
         onClick={closeMobileMenu}
-        active={item.id === currentActiveItem?.id} />
+        active={item.id === currentActiveItem?.id}
+      />
     ));
-  }, [items, closeMobileMenu, currentActiveItem?.id])
+  }, [items, closeMobileMenu, currentActiveItem?.id]);
 
   return (
     <nav className={styles.header} aria-label="main-header">
@@ -72,24 +75,24 @@ export const MenuBar: React.FC<MenuBarProps> = ({items, currentPathname}) => {
           </span>
         </Link>
         <div className={'hide-smaller-large ' + styles.linksContainer}>
-          { allLinks }
+          {allLinks}
         </div>
         <div className={'hide-larger-or-eq-large ' + styles.linksContainer}>
           <MenuBarPopupButton
             label={currentActiveItem?.label ?? 'Naviguer'}
-            onClick={openMobileMenu} />
+            onClick={openMobileMenu}
+          />
           <ReactModal
             ariaHideApp={false}
             portalClassName={`${firaSans.variable} ${firaCode.variable}`}
             isOpen={mobileNavOpen}
             contentLabel={'Naviguer vers...'}
-            onRequestClose={closeMobileMenu}>
-            <div className={styles.mobileMenuContainer}>
-              { allLinks }
-            </div>
+            onRequestClose={closeMobileMenu}
+          >
+            <div className={styles.mobileMenuContainer}>{allLinks}</div>
           </ReactModal>
         </div>
       </LayoutContainer>
     </nav>
   );
-}
+};

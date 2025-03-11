@@ -1,6 +1,4 @@
-import {
-  hasTechnology
-} from "./technologies.utils";
+import { hasTechnology } from './technologies.utils';
 
 jest.mock('../data/technology/data');
 

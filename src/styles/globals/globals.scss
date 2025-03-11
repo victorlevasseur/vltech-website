@@ -41,7 +41,8 @@ a {
   }
 }
 
-em, strong {
+em,
+strong {
   font-style: normal;
   font-weight: 600;
 }
@@ -60,7 +61,9 @@ em, strong {
   }
 }
 
-button, input[type="submit"], input[type="reset"] {
+button,
+input[type='submit'],
+input[type='reset'] {
   background: none;
   color: inherit;
   border: none;
@@ -71,7 +74,11 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .ReactModal__Overlay {
-  background-color: color-mix(in srgb, colors.neutral(300) 50%, transparent) !important;
+  background-color: color-mix(
+    in srgb,
+    colors.neutral(300) 50%,
+    transparent
+  ) !important;
 }
 
 .ReactModal__Content {

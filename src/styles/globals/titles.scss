@@ -3,7 +3,6 @@
 @use '../tokens/font.scss';
 @use '../tokens/typo.scss';
 
-
 @mixin titles {
   h1 {
     @include typo.heading-1;
@@ -18,7 +17,9 @@
   }
 
   hgroup {
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       margin-bottom: 4px;
     }
 

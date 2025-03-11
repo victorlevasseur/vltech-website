@@ -3,33 +3,34 @@ import { isTechnologyWithProjects } from './technologies.actions';
 jest.mock('../data/technology/data');
 
 jest.mock('./projects.actions', () => ({
-  listProjects: () => Promise.resolve([
-    {
-      id: 'p1',
-      name: 'Project 1',
-      content: () => <></>,
-      summary: 'Lorem ipsum',
-      technologies: [
-        {
-          id: 'arthurscript'
-        },
-        {
-          id: 'totorCloud'
-        }
-      ]
-    },
-    {
-      id: 'p2',
-      name: 'Project 2',
-      content: () => <></>,
-      summary: 'Lorem ipsum',
-      technologies: [
-        {
-          id: 'victorscript'
-        }
-      ]
-    }
-  ]),
+  listProjects: () =>
+    Promise.resolve([
+      {
+        id: 'p1',
+        name: 'Project 1',
+        content: () => <></>,
+        summary: 'Lorem ipsum',
+        technologies: [
+          {
+            id: 'arthurscript',
+          },
+          {
+            id: 'totorCloud',
+          },
+        ],
+      },
+      {
+        id: 'p2',
+        name: 'Project 2',
+        content: () => <></>,
+        summary: 'Lorem ipsum',
+        technologies: [
+          {
+            id: 'victorscript',
+          },
+        ],
+      },
+    ]),
 }));
 
 describe('isTechnologyWithProjects', () => {

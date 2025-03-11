@@ -1,7 +1,7 @@
-import {Meta, StoryObj} from "@storybook/react";
-import {MenuBar} from "./menu-bar";
-import {ALL_MODES} from "../../../.storybook/modes";
-import {userEvent, within} from "@storybook/test";
+import { Meta, StoryObj } from '@storybook/react';
+import { MenuBar } from './menu-bar';
+import { ALL_MODES } from '../../../.storybook/modes';
+import { userEvent, within } from '@storybook/test';
 
 const meta: Meta<typeof MenuBar> = {
   component: MenuBar,
@@ -11,36 +11,32 @@ const meta: Meta<typeof MenuBar> = {
       { id: 'foo', label: 'Foo', href: '/foo' },
       { id: 'bar', label: 'Bar', href: '/bar' },
     ],
-    currentPathname: '/'
+    currentPathname: '/',
   },
   parameters: {
     withMargins: false,
     chromatic: {
-      modes: ALL_MODES
-    }
-  }
+      modes: ALL_MODES,
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof MenuBar>;
 
-export const Standard: Story = {}
+export const Standard: Story = {};
 
 export const WithMobileMenuOpen: Story = {
   parameters: {
     chromatic: {
-      modes: [
-        ALL_MODES.xsmall,
-        ALL_MODES.small,
-        ALL_MODES.medium,
-      ]
+      modes: [ALL_MODES.xsmall, ALL_MODES.small, ALL_MODES.medium],
     },
     viewport: {
-      defaultViewport: 'small'
-    }
+      defaultViewport: 'small',
+    },
   },
-  play: async ({canvasElement}) => {
+  play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     await userEvent.click(canvas.getByRole('button'));
-  }
-}
+  },
+};

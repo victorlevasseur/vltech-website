@@ -1,6 +1,6 @@
-import {Meta, StoryObj} from "@storybook/react";
-import {expect, fn, userEvent, within} from "@storybook/test";
-import {MenuBarPopupButton} from "@/components/menu-bar/menu-bar-popup-button";
+import { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
+import { MenuBarPopupButton } from '@/components/menu-bar/menu-bar-popup-button';
 
 const meta: Meta<typeof MenuBarPopupButton> = {
   component: MenuBarPopupButton,
@@ -9,12 +9,12 @@ const meta: Meta<typeof MenuBarPopupButton> = {
     active: false,
     onClick: fn(),
   },
-  play: async ({args, canvasElement}) => {
+  play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
-    await userEvent.click(canvas.getByRole('button'))
+    await userEvent.click(canvas.getByRole('button'));
 
     await expect(args.onClick).toHaveBeenCalledTimes(1);
-  }
+  },
 };
 
 export default meta;
@@ -25,15 +25,15 @@ export const Standard: Story = {};
 export const Hover: Story = {
   parameters: {
     pseudo: {
-      hover: true
-    }
-  }
+      hover: true,
+    },
+  },
 };
 
 export const Active: Story = {
   args: {
     active: true,
-  }
+  },
 };
 
 export const ActiveAndHover: Story = {
@@ -42,7 +42,7 @@ export const ActiveAndHover: Story = {
   },
   parameters: {
     pseudo: {
-      hover: true
-    }
-  }
-}
+      hover: true,
+    },
+  },
+};
