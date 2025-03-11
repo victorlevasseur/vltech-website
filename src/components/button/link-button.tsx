@@ -14,7 +14,7 @@ export const LinkButton: React.FC<LinkButtonProps> = (props) => {
   const variant = props.variant || 'primary';
   return (
     <Link
-      className={styles.container + ' ' + styles[variant]}
+      className={['no-link-style', styles.container, styles[variant]].join(' ')}
       href={props.href}
       target={props.target}
     >
