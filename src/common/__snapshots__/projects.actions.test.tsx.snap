@@ -8,7 +8,7 @@ exports[`listProjects should return all projects listed and parsed 1`] = `
   "key": null,
   "props": {
     "children": [
-      "This is a ",
+      "This is another again ",
       {
         "$$typeof": Symbol(react.transitional.element),
         "_owner": null,
@@ -52,7 +52,59 @@ exports[`listProjects should return all projects listed and parsed 2`] = `
 }
 `;
 
+exports[`listProjects should return all projects listed and parsed 3`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": [
+      "This is a ",
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": "test",
+        },
+        "type": "strong",
+      },
+      ".",
+    ],
+  },
+  "type": "div",
+}
+`;
+
 exports[`readProject should return a parsed Project interface 1`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": [
+      "This is a ",
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": "test",
+        },
+        "type": "strong",
+      },
+      ".",
+    ],
+  },
+  "type": "div",
+}
+`;
+
+exports[`readProject should return a parsed Project interface with priority if provided 1`] = `
 {
   "$$typeof": Symbol(react.transitional.element),
   "_owner": null,

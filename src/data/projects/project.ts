@@ -10,4 +10,10 @@ export interface Project {
   content: MDXContent;
 
   technologies: Technology[];
+
+  /**
+   * All projects with undefined priority will be ordered as read on
+   * the filesystem (alphabetical).
+   */
+  priority?: number;
 }
