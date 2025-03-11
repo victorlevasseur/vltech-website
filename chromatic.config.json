@@ -5,6 +5,6 @@
   "exitOnceUploaded": true,
   "externals": ["public/**"],
   "onlyChanged": true,
-  "skip": "dependabot/**",
+  "skip": "renovate/**",
   "buildScriptName": "storybook:build"
 }
