@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`listProjects should return all projects listed and parsed 1`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": [
+      "This is a ",
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": "test",
+        },
+        "type": "strong",
+      },
+      ".",
+    ],
+  },
+  "type": "div",
+}
+`;
+
+exports[`listProjects should return all projects listed and parsed 2`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": [
+      "This is another ",
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": "test",
+        },
+        "type": "strong",
+      },
+      ".",
+    ],
+  },
+  "type": "div",
+}
+`;
+
+exports[`readProject should return a parsed Project interface 1`] = `
+{
+  "$$typeof": Symbol(react.transitional.element),
+  "_owner": null,
+  "_store": {},
+  "key": null,
+  "props": {
+    "children": [
+      "This is a ",
+      {
+        "$$typeof": Symbol(react.transitional.element),
+        "_owner": null,
+        "_store": {},
+        "key": null,
+        "props": {
+          "children": "test",
+        },
+        "type": "strong",
+      },
+      ".",
+    ],
+  },
+  "type": "div",
+}
+`;

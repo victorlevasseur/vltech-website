@@ -4,10 +4,26 @@ import {InfoCard} from "@/components/card/info-card";
 
 import styles from './technologies-card.module.scss';
 import {TechnologyLogo} from "@/components/card/technologies-card/technology-logo";
-import {groupAndSortTechnologies} from "@/data/technology-utils";
+import lodash from 'lodash';
+import { TECHNOLOGIES_CATEGORIES } from '@/data/technology/data';
 
 export interface TechnologiesCardProps {
   technologies: Technology[];
+}
+
+export const groupAndSortTechnologies = (technologies: Technology[]) => {
+  return lodash.chain(technologies)
+    .groupBy((technology) => technology.category.id)
+    .toPairs()
+    .filter((pair): pair is [keyof typeof TECHNOLOGIES_CATEGORIES, Technology[]] =>
+      pair[0] in TECHNOLOGIES_CATEGORIES)
+    .map(([categoryId, technologies]) => ({
+      category: TECHNOLOGIES_CATEGORIES[categoryId],
+      technologies: technologies.sort((a, b) => a.name.localeCompare(b.name)),
+    }))
+    .sort((categoryA, categoryB) =>
+      categoryA.category.priority - categoryB.category.priority)
+    .value();
 }
 
 export const TechnologiesCard: React.FC<TechnologiesCardProps> = (props) => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import { LayoutContainer } from '@/components/layout/layout-container';
 import { LayoutColumn } from '@/components/layout/layout-column';
-import { parseProjectMdx } from '@/data/technology-utils';
+import { readProject } from '@/common/projects.actions';
 import { notFound } from 'next/navigation';
 import { TechnologiesCard } from '@/components/card/technologies-card/technologies-card';
 import { Page } from '@/components/layout/page';
@@ -21,9 +21,7 @@ const ProjectPage: NextPage<ProjectPageProps> = async (props) => {
   }
 
   try {
-    const project = parseProjectMdx(
-      projectId,
-      await import('@/data/projects/contents/' + projectId + '.mdx'));
+    const project = await readProject(projectId);
 
     return (
       <Page>
