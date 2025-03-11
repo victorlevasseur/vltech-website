@@ -1,3 +1,4 @@
+import { expect } from '@jest/globals';
 import { parseTechKeywordFilter } from '@/components/keywords/tech-keyword';
 
 const FakeComponent = () => <></>;

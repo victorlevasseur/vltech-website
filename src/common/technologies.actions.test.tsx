@@ -1,3 +1,4 @@
+import { expect } from '@jest/globals';
 import { isTechnologyWithProjects } from './technologies.actions';
 
 jest.mock('../data/technology/data');
