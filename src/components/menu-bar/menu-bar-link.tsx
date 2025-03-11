@@ -13,7 +13,7 @@ export interface MenuBarLinkProps {
 const MenuBarLink: React.FC<MenuBarLinkProps> = (props) => {
   return (
     <Link
-      className={`${styles.container} ${props.active ? styles.active : ''}`}
+      className={`no-link-style ${styles.container} ${props.active ? styles.active : ''}`}
       href={props.href}
       onClick={props.onClick}
       data-testid={'link'}

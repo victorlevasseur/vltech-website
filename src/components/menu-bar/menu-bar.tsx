@@ -57,7 +57,7 @@ export const MenuBar: React.FC<MenuBarProps> = ({ items, currentPathname }) => {
         containerClassName={styles.headerContainer}
         enableGrid={false}
       >
-        <Link className={styles.logoContainer} href={'/'}>
+        <Link className={'no-link-style ' + styles.logoContainer} href={'/'}>
           <Image
             quality={95}
             priority={true}
