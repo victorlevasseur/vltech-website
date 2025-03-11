@@ -9,7 +9,9 @@ import { listFilesInFolder } from '@/common/fs.actions';
 jest.mock('../data/technology/data');
 
 jest.mock<typeof import('./fs.actions')>('./fs.actions', () => ({
-  listFilesInFolder: jest.fn(() => Promise.resolve(['file1', 'file2'])),
+  listFilesInFolder: jest.fn(() =>
+    Promise.resolve(['file1', 'file2', 'file3'])
+  ),
 }));
 
 describe('readProject', () => {
@@ -40,6 +42,60 @@ describe('readProject', () => {
       name: 'Project',
       summary: 'project summary',
       content: expect.anything(),
+      technologies: [
+        {
+          category: {
+            id: 'CategoryB',
+            name: 'Category B',
+            priority: 0,
+          },
+          id: 'victorscript',
+          name: 'VictorScript',
+        },
+        {
+          category: {
+            id: 'CategoryB',
+            name: 'Category B',
+            priority: 0,
+          },
+          id: 'arthurscript',
+          name: 'ArthurScript',
+        },
+      ],
+    });
+
+    expect(project.content({})).toMatchSnapshot();
+  });
+
+  test('should return a parsed Project interface with priority if provided', async () => {
+    // Fake MDX doc.
+    jest.doMock(
+      '@/data/projects/contents/project-priority.mdx',
+      () => ({
+        __esModule: true,
+        default: () => (
+          <div>
+            This is a <strong>test</strong>.
+          </div>
+        ),
+        frontmatter: {
+          name: 'Project',
+          summary: 'project summary',
+          technologies: ['victorscript', 'arthurscript'],
+          priority: 12,
+        },
+      }),
+      { virtual: true }
+    );
+
+    const project = await readProject('project-priority');
+
+    expect(project).toEqual({
+      id: 'project-priority',
+      name: 'Project',
+      summary: 'project summary',
+      content: expect.anything(),
+      priority: 12,
       technologies: [
         {
           category: {
@@ -137,7 +193,7 @@ describe('readProject', () => {
 
 describe('listProjectIds', () => {
   test('should return a list of projects ids', async () => {
-    expect(await listProjectIds()).toEqual(['file1', 'file2']);
+    expect(await listProjectIds()).toEqual(['file1', 'file2', 'file3']);
 
     expect(listFilesInFolder).toHaveBeenCalledWith(
       'src/data/projects/contents',
@@ -179,6 +235,26 @@ describe('listProjects', () => {
           name: 'File 2',
           summary: 'file 2 summary',
           technologies: ['victorscript', 'totorCloud'],
+          priority: 2,
+        },
+      }),
+      { virtual: true }
+    );
+
+    jest.doMock(
+      '@/data/projects/contents/file3.mdx',
+      () => ({
+        __esModule: true,
+        default: () => (
+          <div>
+            This is another again <strong>test</strong>.
+          </div>
+        ),
+        frontmatter: {
+          name: 'File 3',
+          summary: 'file 3 summary',
+          technologies: ['victorscript', 'totorCloud'],
+          priority: 1,
         },
       }),
       { virtual: true }
@@ -187,6 +263,60 @@ describe('listProjects', () => {
     const projects = await listProjects();
 
     expect(projects).toEqual([
+      {
+        id: 'file3',
+        name: 'File 3',
+        summary: 'file 3 summary',
+        content: expect.anything(),
+        priority: 1,
+        technologies: [
+          {
+            category: {
+              id: 'CategoryB',
+              name: 'Category B',
+              priority: 0,
+            },
+            id: 'victorscript',
+            name: 'VictorScript',
+          },
+          {
+            category: {
+              id: 'CategoryA',
+              name: 'Category A',
+              priority: 1,
+            },
+            id: 'totorCloud',
+            name: 'Totor Cloud',
+          },
+        ],
+      },
+      {
+        id: 'file2',
+        name: 'File 2',
+        summary: 'file 2 summary',
+        content: expect.anything(),
+        priority: 2,
+        technologies: [
+          {
+            category: {
+              id: 'CategoryB',
+              name: 'Category B',
+              priority: 0,
+            },
+            id: 'victorscript',
+            name: 'VictorScript',
+          },
+          {
+            category: {
+              id: 'CategoryA',
+              name: 'Category A',
+              priority: 1,
+            },
+            id: 'totorCloud',
+            name: 'Totor Cloud',
+          },
+        ],
+      },
       {
         id: 'file1',
         name: 'File 1',
@@ -213,35 +343,10 @@ describe('listProjects', () => {
           },
         ],
       },
-      {
-        id: 'file2',
-        name: 'File 2',
-        summary: 'file 2 summary',
-        content: expect.anything(),
-        technologies: [
-          {
-            category: {
-              id: 'CategoryB',
-              name: 'Category B',
-              priority: 0,
-            },
-            id: 'victorscript',
-            name: 'VictorScript',
-          },
-          {
-            category: {
-              id: 'CategoryA',
-              name: 'Category A',
-              priority: 1,
-            },
-            id: 'totorCloud',
-            name: 'Totor Cloud',
-          },
-        ],
-      },
     ]);
 
     expect(projects[0].content({})).toMatchSnapshot();
     expect(projects[1].content({})).toMatchSnapshot();
+    expect(projects[2].content({})).toMatchSnapshot();
   });
 });

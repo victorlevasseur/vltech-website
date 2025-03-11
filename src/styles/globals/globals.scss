@@ -29,6 +29,12 @@ ol {
 }
 
 a {
+  color: colors.black();
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:not(.no-link-style) {
   @include typo.link;
 
   color: colors.primary(500);
@@ -41,10 +47,13 @@ a {
   }
 }
 
-em,
 strong {
   font-style: normal;
   font-weight: 600;
+}
+
+em {
+  font-style: italic;
 }
 
 @each $breakpoint, $size in media.$breakpoints {

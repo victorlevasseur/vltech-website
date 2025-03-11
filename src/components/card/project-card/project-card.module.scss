@@ -1,0 +1,11 @@
+@use '../../../styles/tokens/colors';
+@use '../../../styles/tokens/font';
+
+.technologiesList {
+  @include font.catchy();
+
+  color: colors.primary(700);
+
+  font-size: 14px;
+  font-weight: bold;
+}

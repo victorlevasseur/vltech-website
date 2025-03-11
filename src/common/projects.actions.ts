@@ -23,8 +23,13 @@ export async function listProjects(): Promise<Project[]> {
   'use server';
   const projectIds = await listProjectIds();
 
-  return await Promise.all(
+  const allProjects = await Promise.all(
     projectIds.map((projectId) => readProject(projectId))
+  );
+
+  return allProjects.sort(
+    (projectA, projectB) =>
+      (projectA.priority ?? 9999) - (projectB.priority ?? 9999)
   );
 }
 
@@ -47,5 +52,6 @@ function parseProjectMdx(projectId: string, projectMdx: ProjectMDX): Project {
     technologies: projectMdx.frontmatter.technologies
       .filter(hasTechnology)
       .map((technologyId) => TECHNOLOGIES[technologyId]),
+    priority: projectMdx.frontmatter.priority,
   };
 }

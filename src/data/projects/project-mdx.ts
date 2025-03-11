@@ -6,5 +6,6 @@ export interface ProjectMDX {
     name: string;
     summary: string;
     technologies: string[];
+    priority?: number;
   };
 }
