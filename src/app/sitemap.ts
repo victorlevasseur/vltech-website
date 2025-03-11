@@ -1,7 +1,16 @@
 import type { MetadataRoute } from 'next';
 import { CONFIG } from '@/config';
+import { listProjects } from '@/common/projects.actions';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const allProjects = await listProjects();
+  const allProjectPages: MetadataRoute.Sitemap = allProjects.map((project) => ({
+    url: `https://${CONFIG.domain}/projects/${project.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.5,
+  }));
+
   return [
     {
       url: `https://${CONFIG.domain}`,
@@ -15,5 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `https://${CONFIG.domain}/projects`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    ...allProjectPages,
   ];
 }
