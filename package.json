@@ -61,7 +61,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/react-modal": "^3.16.3",
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "axe-playwright": "^2.1.0",
     "chromatic": "^11.27.0",
     "cypress": "^14.1.0",
