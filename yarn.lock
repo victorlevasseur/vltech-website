@@ -4271,9 +4271,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opennextjs/aws@npm:^3.5.1":
-  version: 3.5.1
-  resolution: "@opennextjs/aws@npm:3.5.1"
+"@opennextjs/aws@npm:^3.5.2":
+  version: 3.5.2
+  resolution: "@opennextjs/aws@npm:3.5.2"
   dependencies:
     "@aws-sdk/client-cloudfront": "npm:3.398.0"
     "@aws-sdk/client-dynamodb": "npm:^3.398.0"
@@ -4291,7 +4291,7 @@ __metadata:
     urlpattern-polyfill: "npm:^10.0.0"
   bin:
     open-next: dist/index.js
-  checksum: 10/3b493408a41039da1ffa4aa746f95e1bb02d0eae58cf2e63618a220dd23ae814b10857c1257bb37fd3efb2c998688591e20dc4c318e96ab0f15e15be92c34c85
+  checksum: 10/cc220e0653721c5865992c4dd0f253697edbf40056efbb0d51841d8ade10e245a7e7a8324ba45fe60271270791d1f308d09a71f564d849bf45dda6d9d66628ea
   languageName: node
   linkType: hard
 
@@ -19417,7 +19417,7 @@ __metadata:
     "@mdx-js/react": "npm:^3.1.0"
     "@next/mdx": "npm:^15.2.2"
     "@next/third-parties": "npm:^15.2.2"
-    "@opennextjs/aws": "npm:^3.5.1"
+    "@opennextjs/aws": "npm:^3.5.2"
     "@storybook/addon-a11y": "npm:^8.6.4"
     "@storybook/addon-essentials": "npm:^8.6.4"
     "@storybook/addon-interactions": "npm:^8.6.4"
