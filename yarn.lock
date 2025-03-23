@@ -18121,14 +18121,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook-addon-pseudo-states@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "storybook-addon-pseudo-states@npm:4.0.2"
+"storybook-addon-pseudo-states@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "storybook-addon-pseudo-states@npm:4.0.3"
   dependencies:
     "@storybook/icons": "npm:^1.2.10"
   peerDependencies:
     storybook: ^8.2.0
-  checksum: 10/0b1bcd80c86532eba1937ef17ddeb2101a4a6304e9b2d9a40def9e7b913fa2ce06dea17faf2f79cc03effefdf0c5ebee804dc445441c1bbbddcf79a161684413
+  checksum: 10/82c1e3cd6d1b6d002c60137e4566e7639b0ebbf396933a47d997115ebf2264197b09e0ee1480bce9ff91bea6abf43eab6be665f32aee0fda1ce17eb6494675f7
   languageName: node
   linkType: hard
 
@@ -19485,7 +19485,7 @@ __metadata:
     sass: "npm:^1.86.0"
     start-server-and-test: "npm:^2.0.11"
     storybook: "npm:^8.6.7"
-    storybook-addon-pseudo-states: "npm:^4.0.2"
+    storybook-addon-pseudo-states: "npm:^4.0.3"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.8.2"
     webpack: "npm:^5.98.0"
