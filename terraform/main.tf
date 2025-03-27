@@ -47,7 +47,7 @@ module "single_zone" {
   }
 
   source  = "RJPearson94/open-next/aws//modules/tf-aws-open-next-zone"
-  version = "3.4.2"
+  version = "3.5.0"
 
   prefix      = "vltech-website"
   folder_path = "../.open-next"
