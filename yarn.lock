@@ -6462,7 +6462,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/postcss@npm:^4.0.16":
+"@tailwindcss/postcss@npm:^4.0.17":
   version: 4.0.17
   resolution: "@tailwindcss/postcss@npm:4.0.17"
   dependencies:
@@ -19562,7 +19562,7 @@ __metadata:
     "@storybook/react": "npm:^8.6.9"
     "@storybook/test": "npm:^8.6.9"
     "@storybook/test-runner": "npm:^0.22.0"
-    "@tailwindcss/postcss": "npm:^4.0.16"
+    "@tailwindcss/postcss": "npm:^4.0.17"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.2.0"
