@@ -64,7 +64,7 @@
     "autoprefixer": "^10.4.21",
     "axe-playwright": "^2.1.0",
     "chromatic": "^11.27.0",
-    "cypress": "^14.2.0",
+    "cypress": "^14.2.1",
     "eslint": "^9.23.0",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^10.1.1",
