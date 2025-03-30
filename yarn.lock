@@ -6833,7 +6833,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.13.13":
+"@types/node@npm:^22.13.14":
   version: 22.13.14
   resolution: "@types/node@npm:22.13.14"
   dependencies:
@@ -19560,7 +19560,7 @@ __metadata:
     "@types/jest": "npm:^29.5.14"
     "@types/lodash": "npm:^4.17.16"
     "@types/mdx": "npm:^2.0.13"
-    "@types/node": "npm:^22.13.13"
+    "@types/node": "npm:^22.13.14"
     "@types/react": "npm:^19.0.12"
     "@types/react-dom": "npm:^19.0.4"
     "@types/react-modal": "npm:^3.16.3"
