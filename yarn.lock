@@ -5652,7 +5652,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-a11y@npm:^8.6.10":
+"@storybook/addon-a11y@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/addon-a11y@npm:8.6.11"
   dependencies:
@@ -5724,7 +5724,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:^8.6.10":
+"@storybook/addon-essentials@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/addon-essentials@npm:8.6.11"
   dependencies:
@@ -5755,7 +5755,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:^8.6.10":
+"@storybook/addon-interactions@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/addon-interactions@npm:8.6.11"
   dependencies:
@@ -5814,7 +5814,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:8.6.11, @storybook/blocks@npm:^8.6.10":
+"@storybook/blocks@npm:8.6.11, @storybook/blocks@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/blocks@npm:8.6.11"
   dependencies:
@@ -5972,7 +5972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/nextjs@npm:^8.6.10":
+"@storybook/nextjs@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/nextjs@npm:8.6.11"
   dependencies:
@@ -6096,7 +6096,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:8.6.11, @storybook/react@npm:^8.6.10":
+"@storybook/react@npm:8.6.11, @storybook/react@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/react@npm:8.6.11"
   dependencies:
@@ -6152,7 +6152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:8.6.11, @storybook/test@npm:^8.6.10":
+"@storybook/test@npm:8.6.11, @storybook/test@npm:^8.6.11":
   version: 8.6.11
   resolution: "@storybook/test@npm:8.6.11"
   dependencies:
@@ -18224,7 +18224,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^8.6.10":
+"storybook@npm:^8.6.11":
   version: 8.6.11
   resolution: "storybook@npm:8.6.11"
   dependencies:
@@ -19545,13 +19545,13 @@ __metadata:
     "@next/mdx": "npm:^15.2.4"
     "@next/third-parties": "npm:^15.2.4"
     "@opennextjs/aws": "npm:^3.5.3"
-    "@storybook/addon-a11y": "npm:^8.6.10"
-    "@storybook/addon-essentials": "npm:^8.6.10"
-    "@storybook/addon-interactions": "npm:^8.6.10"
-    "@storybook/blocks": "npm:^8.6.10"
-    "@storybook/nextjs": "npm:^8.6.10"
-    "@storybook/react": "npm:^8.6.10"
-    "@storybook/test": "npm:^8.6.10"
+    "@storybook/addon-a11y": "npm:^8.6.11"
+    "@storybook/addon-essentials": "npm:^8.6.11"
+    "@storybook/addon-interactions": "npm:^8.6.11"
+    "@storybook/blocks": "npm:^8.6.11"
+    "@storybook/nextjs": "npm:^8.6.11"
+    "@storybook/react": "npm:^8.6.11"
+    "@storybook/test": "npm:^8.6.11"
     "@storybook/test-runner": "npm:^0.22.0"
     "@tailwindcss/postcss": "npm:^4.0.17"
     "@testing-library/dom": "npm:^10.4.0"
@@ -19591,7 +19591,7 @@ __metadata:
     remark-mdx-frontmatter: "npm:^5.1.0"
     sass: "npm:^1.86.0"
     start-server-and-test: "npm:^2.0.11"
-    storybook: "npm:^8.6.10"
+    storybook: "npm:^8.6.11"
     storybook-addon-pseudo-states: "npm:^4.0.3"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.8.2"
