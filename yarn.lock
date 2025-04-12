@@ -19627,7 +19627,7 @@ __metadata:
     storybook-addon-pseudo-states: "npm:^4.0.3"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.8.3"
-    webpack: "npm:^5.99.4"
+    webpack: "npm:^5.99.5"
   languageName: unknown
   linkType: soft
 
@@ -19804,7 +19804,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.99.4":
+"webpack@npm:^5.99.5":
   version: 5.99.5
   resolution: "webpack@npm:5.99.5"
   dependencies:
