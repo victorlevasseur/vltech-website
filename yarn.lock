@@ -11094,7 +11094,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.25.0":
+"eslint@npm:^9.25.1":
   version: 9.25.1
   resolution: "eslint@npm:9.25.1"
   dependencies:
@@ -19919,7 +19919,7 @@ __metadata:
     axe-playwright: "npm:^2.1.0"
     chromatic: "npm:^11.28.2"
     cypress: "npm:^14.3.1"
-    eslint: "npm:^9.25.0"
+    eslint: "npm:^9.25.1"
     eslint-config-next: "npm:15.3.1"
     eslint-config-prettier: "npm:^10.1.2"
     eslint-plugin-storybook: "npm:^0.12.0"
