@@ -9719,9 +9719,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^14.3.1":
-  version: 14.3.1
-  resolution: "cypress@npm:14.3.1"
+"cypress@npm:^14.3.2":
+  version: 14.3.2
+  resolution: "cypress@npm:14.3.2"
   dependencies:
     "@cypress/request": "npm:^3.0.8"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -9768,7 +9768,7 @@ __metadata:
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10/fcd2822f84fb90e9d542c674818db45dc75dc93f155e58743ebb0ed0ec763123da695174f886fa60a2aabc0e3a7bb73ff08d10cd8b513775be589903f1f68701
+  checksum: 10/895c12d4069c47c80e3e99f7031cb54d4d708f4989bdeac50fb5a9bef43b84e3dbb274aab60b214e2fe83049eee098224a1e2830809954f8250a64f521a98aa5
   languageName: node
   linkType: hard
 
@@ -19918,7 +19918,7 @@ __metadata:
     autoprefixer: "npm:^10.4.21"
     axe-playwright: "npm:^2.1.0"
     chromatic: "npm:^11.28.2"
-    cypress: "npm:^14.3.1"
+    cypress: "npm:^14.3.2"
     eslint: "npm:^9.25.1"
     eslint-config-next: "npm:15.3.1"
     eslint-config-prettier: "npm:^10.1.2"
