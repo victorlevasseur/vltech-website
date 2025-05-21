@@ -6,7 +6,7 @@ terraform {
     }
   }
 
-  required_version = ">= 1.12.0"
+  required_version = ">= 1.12.1"
 
   backend "s3" {
     bucket = "vltech-terraform"
