@@ -4768,7 +4768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opennextjs/aws@npm:^3.6.3":
+"@opennextjs/aws@npm:^3.6.4":
   version: 3.6.4
   resolution: "@opennextjs/aws@npm:3.6.4"
   dependencies:
@@ -20201,7 +20201,7 @@ __metadata:
     "@mdx-js/react": "npm:^3.1.0"
     "@next/mdx": "npm:^15.3.2"
     "@next/third-parties": "npm:^15.3.2"
-    "@opennextjs/aws": "npm:^3.6.3"
+    "@opennextjs/aws": "npm:^3.6.4"
     "@storybook/addon-a11y": "npm:^8.6.14"
     "@storybook/addon-essentials": "npm:^8.6.14"
     "@storybook/addon-interactions": "npm:^8.6.14"
