@@ -36,7 +36,7 @@
     "react-dom": "^19.1.0",
     "react-modal": "^3.16.3",
     "remark-frontmatter": "^5.0.0",
-    "remark-mdx-frontmatter": "^5.1.0"
+    "remark-mdx-frontmatter": "^5.2.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
