@@ -6520,9 +6520,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test-runner@npm:^0.22.0":
-  version: 0.22.0
-  resolution: "@storybook/test-runner@npm:0.22.0"
+"@storybook/test-runner@npm:^0.22.1":
+  version: 0.22.1
+  resolution: "@storybook/test-runner@npm:0.22.1"
   dependencies:
     "@babel/core": "npm:^7.22.5"
     "@babel/generator": "npm:^7.22.5"
@@ -6547,7 +6547,7 @@ __metadata:
     storybook: ^0.0.0-0 || ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0 || ^9.0.0-0
   bin:
     test-storybook: dist/test-storybook.js
-  checksum: 10/edd1ca562864eadab831b45c0197cd52e41e0d639b7549a0ea9da71f6b82c1e59c8e77cb00ca25ad2727f2c99fe98b191d93a73e923f6e8cd61c994ba158c6ab
+  checksum: 10/b124495770068d9c70ab8c643a4f5547bd27ebdfd5151161241743544799f0f48305a463603024b9849b93f9d39477d562872e7851371b1b91395ab93571f39d
   languageName: node
   linkType: hard
 
@@ -20237,7 +20237,7 @@ __metadata:
     "@storybook/nextjs": "npm:^8.6.14"
     "@storybook/react": "npm:^8.6.14"
     "@storybook/test": "npm:^8.6.14"
-    "@storybook/test-runner": "npm:^0.22.0"
+    "@storybook/test-runner": "npm:^0.22.1"
     "@tailwindcss/postcss": "npm:^4.1.8"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
