@@ -7305,7 +7305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.1.7":
+"@types/react@npm:^19.1.8":
   version: 19.1.8
   resolution: "@types/react@npm:19.1.8"
   dependencies:
@@ -20245,7 +20245,7 @@ __metadata:
     "@types/lodash": "npm:^4.17.17"
     "@types/mdx": "npm:^2.0.13"
     "@types/node": "npm:^22.15.31"
-    "@types/react": "npm:^19.1.7"
+    "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
     "@types/react-modal": "npm:^3.16.3"
     autoprefixer: "npm:^10.4.21"
