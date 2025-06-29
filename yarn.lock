@@ -9924,9 +9924,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:^14.4.1":
-  version: 14.4.1
-  resolution: "cypress@npm:14.4.1"
+"cypress@npm:^14.5.0":
+  version: 14.5.0
+  resolution: "cypress@npm:14.5.0"
   dependencies:
     "@cypress/request": "npm:^3.0.8"
     "@cypress/xvfb": "npm:^1.2.4"
@@ -9954,6 +9954,7 @@ __metadata:
     figures: "npm:^3.2.0"
     fs-extra: "npm:^9.1.0"
     getos: "npm:^3.2.1"
+    hasha: "npm:5.2.2"
     is-installed-globally: "npm:~0.4.0"
     lazy-ass: "npm:^1.6.0"
     listr2: "npm:^3.8.3"
@@ -9973,7 +9974,7 @@ __metadata:
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: 10/c5b36cee2ac7bb4ded06dfade0b1c2b0f9893468e468ab010c87dba1475e1260dfc525d447c3328b2779e163f6268a005180536aa0c813ce7f096aa9066c30d6
+  checksum: 10/e7191106eb12a7427030e6902a654fe67f8ca6d4122829d3f1de71838fc1b8c9f8a1c729e8012c792c3227f897c1303c98b00fc60e2ab2577e788102848648ca
   languageName: node
   linkType: hard
 
@@ -12745,7 +12746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hasha@npm:^5.0.0":
+"hasha@npm:5.2.2, hasha@npm:^5.0.0":
   version: 5.2.2
   resolution: "hasha@npm:5.2.2"
   dependencies:
@@ -20278,7 +20279,7 @@ __metadata:
     autoprefixer: "npm:^10.4.21"
     axe-playwright: "npm:^2.1.0"
     chromatic: "npm:^11.29.0"
-    cypress: "npm:^14.4.1"
+    cypress: "npm:^14.5.0"
     eslint: "npm:^9.29.0"
     eslint-config-next: "npm:15.3.4"
     eslint-config-prettier: "npm:^10.1.5"
