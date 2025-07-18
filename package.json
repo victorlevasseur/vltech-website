@@ -83,7 +83,7 @@
     "storybook-addon-pseudo-states": "^4.0.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "webpack": "^5.100.1"
+    "webpack": "^5.100.2"
   },
   "browserslist": [
     "> 0.5%",
