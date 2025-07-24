@@ -4796,9 +4796,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opennextjs/aws@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "@opennextjs/aws@npm:3.7.0"
+"@opennextjs/aws@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "@opennextjs/aws@npm:3.7.1"
   dependencies:
     "@ast-grep/napi": "npm:^0.35.0"
     "@aws-sdk/client-cloudfront": "npm:3.398.0"
@@ -4819,7 +4819,7 @@ __metadata:
     yaml: "npm:^2.7.0"
   bin:
     open-next: dist/index.js
-  checksum: 10/eac1d3029b02ac75cf8e782c021895cb63b39dd0bd42fbf933ddec0fc852e911d5ca792369b040f0009cf7a0514434f505a6c85bde451d6fea32bb8ef06b33f1
+  checksum: 10/a6437bc6978943826afd8391c03ca9895bcb5976d2e9caa7d5e6a42f3fd60b406eb7482904b42d031428bf3ecb1b14a4e8c4718237421a01f783318e02fba883
   languageName: node
   linkType: hard
 
@@ -20307,7 +20307,7 @@ __metadata:
     "@mdx-js/react": "npm:^3.1.0"
     "@next/mdx": "npm:^15.4.2"
     "@next/third-parties": "npm:^15.4.2"
-    "@opennextjs/aws": "npm:^3.7.0"
+    "@opennextjs/aws": "npm:^3.7.1"
     "@storybook/addon-a11y": "npm:^8.6.14"
     "@storybook/addon-essentials": "npm:^8.6.14"
     "@storybook/addon-interactions": "npm:^8.6.14"
