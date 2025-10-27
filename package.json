@@ -63,7 +63,7 @@
     "@types/react-modal": "^3.16.3",
     "autoprefixer": "^10.4.21",
     "axe-playwright": "^2.1.0",
-    "chromatic": "^11.29.0",
+    "chromatic": "^13.3.2",
     "cypress": "^14.5.4",
     "eslint": "^9.33.0",
     "eslint-config-next": "15.4.6",
