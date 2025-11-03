@@ -8520,9 +8520,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-playwright@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "axe-playwright@npm:2.1.0"
+"axe-playwright@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "axe-playwright@npm:2.2.2"
   dependencies:
     "@types/junit-report-builder": "npm:^3.0.2"
     axe-core: "npm:^4.10.1"
@@ -8531,7 +8531,7 @@ __metadata:
     picocolors: "npm:^1.1.1"
   peerDependencies:
     playwright: ">1.0.0"
-  checksum: 10/d478c206bdd950257fafc872a6da3d9e73ca6a235ecea504bfde9744ca9265cc7abea050301c7cb611a3e79d61e14d50a047595c6e6cc13353e6c1c835afe922
+  checksum: 10/939111de0766ab9d4936cf9235538a691dda1fde6ca24606bf82fe6a45ee3af8de38b4995623eecd361fbc472a1077e8514bdad073a7454859cbdb5ff435c5b0
   languageName: node
   linkType: hard
 
@@ -20323,7 +20323,7 @@ __metadata:
     "@types/react-dom": "npm:^19.1.7"
     "@types/react-modal": "npm:^3.16.3"
     autoprefixer: "npm:^10.4.21"
-    axe-playwright: "npm:^2.1.0"
+    axe-playwright: "npm:^2.2.2"
     chromatic: "npm:^13.3.2"
     cypress: "npm:^14.5.4"
     eslint: "npm:^9.33.0"
