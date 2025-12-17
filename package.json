@@ -65,7 +65,7 @@
     "axe-playwright": "^2.2.2",
     "chromatic": "^13.3.4",
     "cypress": "^14.5.4",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.2",
     "eslint-config-next": "15.5.9",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-storybook": "^0.12.0",
