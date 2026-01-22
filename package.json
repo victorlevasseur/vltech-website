@@ -41,7 +41,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.7",
     "@eslint/eslintrc": "^3.3.3",
-    "@opennextjs/aws": "^3.9.8",
+    "@opennextjs/aws": "^3.9.9",
     "@storybook/addon-a11y": "^8.6.14",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
