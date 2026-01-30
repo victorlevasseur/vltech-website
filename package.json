@@ -32,8 +32,8 @@
     "modern-normalize": "^3.0.1",
     "next": "15.5.10",
     "next-mdx-remote": "^5.0.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "react-modal": "^3.16.3",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.2.0"
