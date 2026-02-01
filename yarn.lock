@@ -4703,23 +4703,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/env@npm:15.5.10":
-  version: 15.5.10
-  resolution: "@next/env@npm:15.5.10"
-  checksum: 10/801a17e9ba94b8017dde05a21cec08aab19d6d7d3151de48cd19f4bf60711559cfc4d56688399d51750d74709b970f63119ab1d628bc6199db78d2755e027ce1
+"@next/env@npm:15.5.11":
+  version: 15.5.11
+  resolution: "@next/env@npm:15.5.11"
+  checksum: 10/c9b9b1a99e169954f296da357557ba25afee0a188ec6cb024493b984806deb8793f20c7671a9b62c3de5f7cc40e52fb7817123f6ab83dc1304a2d2df12dbada9
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:15.5.10":
-  version: 15.5.10
-  resolution: "@next/eslint-plugin-next@npm:15.5.10"
+"@next/eslint-plugin-next@npm:15.5.11":
+  version: 15.5.11
+  resolution: "@next/eslint-plugin-next@npm:15.5.11"
   dependencies:
     fast-glob: "npm:3.3.1"
-  checksum: 10/ab404d54f734be2fc9a798c4a5a59d616c5b617f8271cbe268719a5450f1f7f23da35ef7711676816abb7ca61d0a5a669ac71d7b02352868d0209c0d7d281edf
+  checksum: 10/c7d7d38ab28029432548d3ec58c56277476a83df620ef6e28f6b80fcbec3170c3af448a408945345dba9ddefbdcf8c00e0f631f5e2e3b033633c0147e271dc58
   languageName: node
   linkType: hard
 
-"@next/mdx@npm:^15.5.10":
+"@next/mdx@npm:^15.5.11":
   version: 15.5.11
   resolution: "@next/mdx@npm:15.5.11"
   dependencies:
@@ -4792,7 +4792,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/third-parties@npm:^15.5.10":
+"@next/third-parties@npm:^15.5.11":
   version: 15.5.11
   resolution: "@next/third-parties@npm:15.5.11"
   dependencies:
@@ -11373,11 +11373,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:15.5.10":
-  version: 15.5.10
-  resolution: "eslint-config-next@npm:15.5.10"
+"eslint-config-next@npm:15.5.11":
+  version: 15.5.11
+  resolution: "eslint-config-next@npm:15.5.11"
   dependencies:
-    "@next/eslint-plugin-next": "npm:15.5.10"
+    "@next/eslint-plugin-next": "npm:15.5.11"
     "@rushstack/eslint-patch": "npm:^1.10.3"
     "@typescript-eslint/eslint-plugin": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
     "@typescript-eslint/parser": "npm:^5.4.2 || ^6.0.0 || ^7.0.0 || ^8.0.0"
@@ -11393,7 +11393,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/c3b5db4f683030adcda40386fffb3c707849ba63abe1f985767718a65015666836730b1722f7662b43f6c4212e5e6d50bfa4dfe47931c43a0841f90c03eb0119
+  checksum: 10/2ea2a2ddca3481597aeaa723d3d31b7ec53d0dc2e4c7c86b0516d10da56ea9c080811d3222fcd8b7216e96bb160b03891b5719ece3a0fc8590ec032a2a7089f3
   languageName: node
   linkType: hard
 
@@ -16268,11 +16268,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:15.5.10":
-  version: 15.5.10
-  resolution: "next@npm:15.5.10"
+"next@npm:15.5.11":
+  version: 15.5.11
+  resolution: "next@npm:15.5.11"
   dependencies:
-    "@next/env": "npm:15.5.10"
+    "@next/env": "npm:15.5.11"
     "@next/swc-darwin-arm64": "npm:15.5.7"
     "@next/swc-darwin-x64": "npm:15.5.7"
     "@next/swc-linux-arm64-gnu": "npm:15.5.7"
@@ -16323,7 +16323,7 @@ __metadata:
       optional: true
   bin:
     next: dist/bin/next
-  checksum: 10/8ddac0c7fdb46450071622d7a3f4f47125394a8f0685eaa662242740549c20f24c10fc951a4bc206596e1b6c469450ea437393a6a1187ff58e67b213590fabb1
+  checksum: 10/402d7eab5b2bda90890d7a7ae283d0bbad8009c21c3910e601e78b07f723b5ea8dbb0e6044d8ae6c1ff9f92c717d9b260f613c1ef6d392259de1447ebb96cbaa
   languageName: node
   linkType: hard
 
@@ -20469,8 +20469,8 @@ __metadata:
     "@fortawesome/react-fontawesome": "npm:^3.1.1"
     "@mdx-js/loader": "npm:^3.1.1"
     "@mdx-js/react": "npm:^3.1.1"
-    "@next/mdx": "npm:^15.5.10"
-    "@next/third-parties": "npm:^15.5.10"
+    "@next/mdx": "npm:^15.5.11"
+    "@next/third-parties": "npm:^15.5.11"
     "@opennextjs/aws": "npm:^3.9.14"
     "@storybook/addon-a11y": "npm:^8.6.14"
     "@storybook/addon-essentials": "npm:^8.6.14"
@@ -20496,7 +20496,7 @@ __metadata:
     chromatic: "npm:^13.3.5"
     cypress: "npm:^14.5.4"
     eslint: "npm:^9.39.2"
-    eslint-config-next: "npm:15.5.10"
+    eslint-config-next: "npm:15.5.11"
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-storybook: "npm:^0.12.0"
     husky: "npm:^9.1.7"
@@ -20505,7 +20505,7 @@ __metadata:
     lint-staged: "npm:^16.2.7"
     lodash: "npm:^4.17.23"
     modern-normalize: "npm:^3.0.1"
-    next: "npm:15.5.10"
+    next: "npm:15.5.11"
     next-mdx-remote: "npm:^5.0.0"
     open-next: "npm:^3.1.3"
     playwright: "npm:^1.58.0"
